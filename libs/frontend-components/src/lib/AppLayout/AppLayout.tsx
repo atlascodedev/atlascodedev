@@ -33,7 +33,7 @@ export function AppLayout(props: AppLayoutProps) {
   return (
     <React.Fragment>
       <AnimatePresence>
-        {loader && false && (
+        {loader && (
           <MotionBox
             onAnimationStart={() =>
               (window.document.body.style.overflow = 'hidden')
@@ -117,6 +117,6 @@ const styles = AtlasStylesheet.create({
     top: 0,
     left: 0,
     zIndex: -1,
-    ...(polkaPattern('#fff', 0.35, 50, '#333') as Record<string, unknown>),
+    ...(polkaPattern('#fff', 0.275, 25, '#333') as Record<string, unknown>),
   },
 });
