@@ -1,11 +1,11 @@
 import React from 'react';
 import * as lottie from 'lottie-web';
-import { Box } from '@mui/material';
+import { Box, BoxProps } from '@mui/material';
 import _, { isUndefined } from 'lodash';
 import { ResponsiveStyleValue } from '@mui/system';
 import { Property } from 'csstype';
 
-export interface ILottieAnimation {
+export interface ILottieAnimation extends BoxProps {
   animationData: unknown;
   width?: ResponsiveStyleValue<Property.Width<string | number>>;
   height?: ResponsiveStyleValue<Property.Width<string | number>>;
@@ -29,6 +29,7 @@ export const LottieAnimation = ({
   paused = false,
   preserveAspectRatio = true,
   stopped = false,
+  ...rest
 }: ILottieAnimation) => {
   const containerRef = React.useRef(null);
   const animationRef = React.useRef<LottieAnimationItem>();
@@ -70,7 +71,7 @@ export const LottieAnimation = ({
     }
   }, [paused, stopped, autoplay, loop]);
 
-  return <Box sx={{ width: width, height: height }} ref={containerRef} />;
+  return <Box {...rest} ref={containerRef} />;
 };
 
 export default LottieAnimation;
