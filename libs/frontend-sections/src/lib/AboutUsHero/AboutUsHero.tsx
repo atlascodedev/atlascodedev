@@ -8,8 +8,6 @@ export interface AboutUsHeroProps extends BoxProps {}
 export function AboutUsHero({ sx, ...rest }: AboutUsHeroProps) {
   const defaultStylesMemo = useMemoizedMergedObject(defaultStyles(), sx);
 
-  console.log(defaultStylesMemo);
-
   return (
     <Box sx={defaultStylesMemo} {...rest}>
       <Container maxWidth="lg" className="AtlasCode-AboutUsHero-root">

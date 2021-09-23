@@ -33,7 +33,7 @@ export function AppLayout(props: AppLayoutProps) {
   return (
     <React.Fragment>
       <AnimatePresence>
-        {loader && (
+        {loader && false && (
           <MotionBox
             onAnimationStart={() =>
               (window.document.body.style.overflow = 'hidden')
