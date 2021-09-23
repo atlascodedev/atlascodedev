@@ -54,7 +54,7 @@ const defaultStyles = () => {
       },
 
       '.AtlasCode-AboutUsHero-illustration-container': {
-        p: { lg: 3 },
+        p: { lg: 5 },
         order: { xs: 1, lg: 0 },
       },
 
