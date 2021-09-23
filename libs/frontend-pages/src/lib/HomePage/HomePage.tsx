@@ -1,4 +1,4 @@
-import { Box, BoxProps, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { AtlasStylesheet } from '@atlascode/frontend-helpers';
 import {
   HomeHero,
@@ -164,6 +164,7 @@ const styles = AtlasStylesheet.create({
 
   faqSection: {
     py: { xs: 8 },
+    px: { xs: 2, lg: 0 },
   },
 
   defenseSection: {
@@ -202,6 +203,7 @@ const styles = AtlasStylesheet.create({
     fontSize: '10px',
     flexDirection: 'column',
     gap: { xs: 4.75 },
+    textAlign: 'center',
   },
 
   testimonialsSectionTitle: {

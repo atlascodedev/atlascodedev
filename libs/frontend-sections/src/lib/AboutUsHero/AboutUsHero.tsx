@@ -13,7 +13,10 @@ export function AboutUsHero({ sx, ...rest }: AboutUsHeroProps) {
       <Container maxWidth="lg" className="AtlasCode-AboutUsHero-root">
         <Box className="AtlasCode-AboutUsHero-grid">
           <Box className="AtlasCode-AboutUsHero-illustration-container">
-            <AboutUsHeroSVG className="AtlasCode-AboutUsHero-illustration" />
+            <AboutUsHeroSVG
+              sx={{ width: 'auto', maxHeight: { xs: '60em' } }}
+              className="AtlasCode-AboutUsHero-illustration"
+            />
           </Box>
           <Box className="AtlasCode-AboutUsHero-text-container">
             <Typography
@@ -56,15 +59,21 @@ const defaultStyles = () => {
       '.AtlasCode-AboutUsHero-illustration-container': {
         p: { lg: 5 },
         order: { xs: 1, lg: 0 },
+        display: 'flex',
+        justifyContent: { xs: 'center', lg: 'initial' },
       },
 
-      '.AtlasCode-AboutUsHero-illustration': {},
+      '.AtlasCode-AboutUsHero-illustration': {
+        maxHeight: '60em',
+        width: { xs: 'auto' },
+      },
 
       '.AtlasCode-AboutUsHero-text-container': {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         gap: { xs: 2 },
+        textAlign: { sm: 'center', lg: 'initial' },
         order: { xs: 0, lg: 1 },
       },
 

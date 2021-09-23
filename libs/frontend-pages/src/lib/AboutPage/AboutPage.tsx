@@ -65,7 +65,7 @@ const styles = AtlasStylesheet.create({
     alignItems: 'center',
     fontSize: '10px',
     gap: { xs: 5 },
-    my: { xs: 15 },
+    py: { xs: 15 },
   },
 
   endCtaTitle: {
@@ -84,8 +84,8 @@ const styles = AtlasStylesheet.create({
   },
 
   aboutUsHero: {
-    py: { xs: 0, lg: 10 },
-    pb: { xs: 10 },
+    py: { xs: 0, lg: 3 },
+    pb: { xs: 3 },
   },
 
   associatesSection: {
