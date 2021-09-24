@@ -1,9 +1,7 @@
-import {
-  AtlasLoader,
-  Footer,
-  Header,
-  WhatsAppButton,
-} from '@atlascode/frontend-components';
+import { WhatsAppButton } from '../WhatsAppButton/WhatsAppButton';
+import { Header } from '../Header/Header';
+import { Footer } from '../Footer/Footer';
+import { AtlasLoader } from '../AtlasLoader/AtlasLoader';
 import { AtlasStylesheet } from '@atlascode/frontend-helpers';
 import { Box } from '@mui/material';
 import { polkaPattern } from '@atlascode/frontend-jss-mixins';

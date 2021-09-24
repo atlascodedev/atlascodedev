@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import createEmotionCache from '@emotion/cache';
 import { ThemeProvider } from '@atlascode/frontend-theme';
+import { AppLayout } from '@atlascode/frontend-components';
 
 function CustomApp(props: AppProps & { emotionCache?: EmotionCache }) {
   const clientSideCache = createEmotionCache({ key: 'css' });
@@ -21,9 +22,11 @@ function CustomApp(props: AppProps & { emotionCache?: EmotionCache }) {
       </Head>
       <CacheProvider value={emotionCache}>
         <ThemeProvider>
-          <div className="app">
-            <Component {...pageProps} />
-          </div>
+          <AppLayout>
+            <div className="app">
+              <Component {...pageProps} />
+            </div>
+          </AppLayout>
         </ThemeProvider>
       </CacheProvider>
     </>

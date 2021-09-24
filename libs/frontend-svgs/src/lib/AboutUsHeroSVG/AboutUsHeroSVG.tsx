@@ -1014,10 +1014,10 @@ export function AboutUsHeroSVG({
           y2="412.503"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#C4C9E4" />
-          <stop offset="0.2542" stop-color="#CED2E8" />
-          <stop offset="0.6771" stop-color="#E7E9F4" />
-          <stop offset="1" stop-color="white" />
+          <stop stopColor="#C4C9E4" />
+          <stop offset="0.2542" stopColor="#CED2E8" />
+          <stop offset="0.6771" stopColor="#E7E9F4" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient
           id="paint1_linear"
@@ -1027,9 +1027,9 @@ export function AboutUsHeroSVG({
           y2="421.427"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.4086" stop-color="#BBC0E6" />
-          <stop offset="0.4134" stop-color="#BCC1E7" />
-          <stop offset="0.5654" stop-color="#CED3F8" />
+          <stop offset="0.4086" stopColor="#BBC0E6" />
+          <stop offset="0.4134" stopColor="#BCC1E7" />
+          <stop offset="0.5654" stopColor="#CED3F8" />
         </linearGradient>
         <linearGradient
           id="paint2_linear"
@@ -1039,9 +1039,9 @@ export function AboutUsHeroSVG({
           y2="66.8026"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.00310355" stop-color="#BBC0E6" />
-          <stop offset="0.00826281" stop-color="#BCC1E7" />
-          <stop offset="0.1691" stop-color="#CED3F8" />
+          <stop offset="0.00310355" stopColor="#BBC0E6" />
+          <stop offset="0.00826281" stopColor="#BCC1E7" />
+          <stop offset="0.1691" stopColor="#CED3F8" />
         </linearGradient>
         <linearGradient
           id="paint3_linear"
@@ -1051,10 +1051,10 @@ export function AboutUsHeroSVG({
           y2="381.712"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.4265" stop-color="#C4C9E4" />
-          <stop offset="0.5766" stop-color="#D7DAED" />
-          <stop offset="0.8459" stop-color="#F4F5FA" />
-          <stop offset="1" stop-color="white" />
+          <stop offset="0.4265" stopColor="#C4C9E4" />
+          <stop offset="0.5766" stopColor="#D7DAED" />
+          <stop offset="0.8459" stopColor="#F4F5FA" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient
           id="paint4_linear"
@@ -1064,11 +1064,11 @@ export function AboutUsHeroSVG({
           y2="472.116"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#C4C9E4" />
-          <stop offset="0.1876" stop-color="#D7DAED" />
-          <stop offset="0.4771" stop-color="#EDEEF7" />
-          <stop offset="0.7534" stop-color="#FAFBFD" />
-          <stop offset="1" stop-color="white" />
+          <stop stopColor="#C4C9E4" />
+          <stop offset="0.1876" stopColor="#D7DAED" />
+          <stop offset="0.4771" stopColor="#EDEEF7" />
+          <stop offset="0.7534" stopColor="#FAFBFD" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient
           id="paint5_linear"
@@ -1078,11 +1078,11 @@ export function AboutUsHeroSVG({
           y2="446.996"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#C4C9E4" />
-          <stop offset="0.1876" stop-color="#D7DAED" />
-          <stop offset="0.4771" stop-color="#EDEEF7" />
-          <stop offset="0.7534" stop-color="#FAFBFD" />
-          <stop offset="1" stop-color="white" />
+          <stop stopColor="#C4C9E4" />
+          <stop offset="0.1876" stopColor="#D7DAED" />
+          <stop offset="0.4771" stopColor="#EDEEF7" />
+          <stop offset="0.7534" stopColor="#FAFBFD" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient
           id="paint6_linear"
@@ -1092,11 +1092,11 @@ export function AboutUsHeroSVG({
           y2="362.773"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#C4C9E4" />
-          <stop offset="0.1876" stop-color="#D7DAED" />
-          <stop offset="0.4771" stop-color="#EDEEF7" />
-          <stop offset="0.7534" stop-color="#FAFBFD" />
-          <stop offset="1" stop-color="white" />
+          <stop stopColor="#C4C9E4" />
+          <stop offset="0.1876" stopColor="#D7DAED" />
+          <stop offset="0.4771" stopColor="#EDEEF7" />
+          <stop offset="0.7534" stopColor="#FAFBFD" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient
           id="paint7_linear"
@@ -1106,10 +1106,10 @@ export function AboutUsHeroSVG({
           y2="502.128"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#C4C9E4" />
-          <stop offset="0.2542" stop-color="#CED2E8" />
-          <stop offset="0.6771" stop-color="#E7E9F4" />
-          <stop offset="1" stop-color="white" />
+          <stop stopColor="#C4C9E4" />
+          <stop offset="0.2542" stopColor="#CED2E8" />
+          <stop offset="0.6771" stopColor="#E7E9F4" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient
           id="paint8_linear"
@@ -1119,9 +1119,9 @@ export function AboutUsHeroSVG({
           y2="514.455"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.119" stop-color="#BBC0E6" />
-          <stop offset="0.1238" stop-color="#BCC1E7" />
-          <stop offset="0.2751" stop-color="#CED3F8" />
+          <stop offset="0.119" stopColor="#BBC0E6" />
+          <stop offset="0.1238" stopColor="#BCC1E7" />
+          <stop offset="0.2751" stopColor="#CED3F8" />
         </linearGradient>
         <linearGradient
           id="paint9_linear"
@@ -1131,8 +1131,8 @@ export function AboutUsHeroSVG({
           y2="491.77"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.4086" stop-color="#BBC0E6" />
-          <stop offset="0.5654" stop-color="#C4CAE9" />
+          <stop offset="0.4086" stopColor="#BBC0E6" />
+          <stop offset="0.5654" stopColor="#C4CAE9" />
         </linearGradient>
         <linearGradient
           id="paint10_linear"
@@ -1142,8 +1142,8 @@ export function AboutUsHeroSVG({
           y2="494.284"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.4086" stop-color="#BBC0E6" />
-          <stop offset="0.5654" stop-color="#C4CAE9" />
+          <stop offset="0.4086" stopColor="#BBC0E6" />
+          <stop offset="0.5654" stopColor="#C4CAE9" />
         </linearGradient>
         <linearGradient
           id="paint11_linear"
@@ -1153,8 +1153,8 @@ export function AboutUsHeroSVG({
           y2="504.059"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.4086" stop-color="#BBC0E6" />
-          <stop offset="0.5654" stop-color="#C4CAE9" />
+          <stop offset="0.4086" stopColor="#BBC0E6" />
+          <stop offset="0.5654" stopColor="#C4CAE9" />
         </linearGradient>
         <linearGradient
           id="paint12_linear"
@@ -1164,10 +1164,10 @@ export function AboutUsHeroSVG({
           y2="368.987"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#C4C9E4" />
-          <stop offset="0.2542" stop-color="#CED2E8" />
-          <stop offset="0.6771" stop-color="#E7E9F4" />
-          <stop offset="1" stop-color="white" />
+          <stop stopColor="#C4C9E4" />
+          <stop offset="0.2542" stopColor="#CED2E8" />
+          <stop offset="0.6771" stopColor="#E7E9F4" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient
           id="paint13_linear"
@@ -1177,9 +1177,9 @@ export function AboutUsHeroSVG({
           y2="376.09"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.4086" stop-color="#BBC0E6" />
-          <stop offset="0.4134" stop-color="#BCC1E7" />
-          <stop offset="0.5654" stop-color="#CED3F8" />
+          <stop offset="0.4086" stopColor="#BBC0E6" />
+          <stop offset="0.4134" stopColor="#BCC1E7" />
+          <stop offset="0.5654" stopColor="#CED3F8" />
         </linearGradient>
         <linearGradient
           id="paint14_linear"
@@ -1189,9 +1189,9 @@ export function AboutUsHeroSVG({
           y2="441.29"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.3315" stop-color="#C4C9E5" />
-          <stop offset="0.5839" stop-color="#D7DBED" />
-          <stop offset="1" stop-color="white" />
+          <stop offset="0.3315" stopColor="#C4C9E5" />
+          <stop offset="0.5839" stopColor="#D7DBED" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient
           id="paint15_linear"
@@ -1201,8 +1201,8 @@ export function AboutUsHeroSVG({
           y2="433.844"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#BBBFE2" />
-          <stop offset="1" stop-color="#DCE0F7" />
+          <stop stopColor="#BBBFE2" />
+          <stop offset="1" stopColor="#DCE0F7" />
         </linearGradient>
         <linearGradient
           id="paint16_linear"
@@ -1212,8 +1212,8 @@ export function AboutUsHeroSVG({
           y2="448.19"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#BBBFE2" />
-          <stop offset="1" stop-color="#CED2F4" />
+          <stop stopColor="#BBBFE2" />
+          <stop offset="1" stopColor="#CED2F4" />
         </linearGradient>
         <linearGradient
           id="paint17_linear"
@@ -1223,8 +1223,8 @@ export function AboutUsHeroSVG({
           y2="448.262"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#CED2F4" />
-          <stop offset="1" stop-color="#BBBFE2" />
+          <stop stopColor="#CED2F4" />
+          <stop offset="1" stopColor="#BBBFE2" />
         </linearGradient>
         <linearGradient
           id="paint18_linear"
@@ -1234,8 +1234,8 @@ export function AboutUsHeroSVG({
           y2="438.526"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.4045" stop-color="#BBBFE2" />
-          <stop offset="1" stop-color="#CED2F4" />
+          <stop offset="0.4045" stopColor="#BBBFE2" />
+          <stop offset="1" stopColor="#CED2F4" />
         </linearGradient>
         <linearGradient
           id="paint19_linear"
@@ -1245,10 +1245,10 @@ export function AboutUsHeroSVG({
           y2="307.775"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.4164" stop-color="#C6CBE7" />
-          <stop offset="0.5872" stop-color="#D2D6EC" />
-          <stop offset="0.8975" stop-color="#F3F4FA" />
-          <stop offset="1" stop-color="white" />
+          <stop offset="0.4164" stopColor="#C6CBE7" />
+          <stop offset="0.5872" stopColor="#D2D6EC" />
+          <stop offset="0.8975" stopColor="#F3F4FA" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient
           id="paint20_linear"
@@ -1258,8 +1258,8 @@ export function AboutUsHeroSVG({
           y2="317.617"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#CED3F8" />
-          <stop offset="1" stop-color="#BBC0E6" />
+          <stop stopColor="#CED3F8" />
+          <stop offset="1" stopColor="#BBC0E6" />
         </linearGradient>
         <linearGradient
           id="paint21_linear"
@@ -1269,9 +1269,9 @@ export function AboutUsHeroSVG({
           y2="294.834"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#C4CAE9" />
-          <stop offset="0.5641" stop-color="#D4DAF2" />
-          <stop offset="1" stop-color="#DAE0F5" />
+          <stop stopColor="#C4CAE9" />
+          <stop offset="0.5641" stopColor="#D4DAF2" />
+          <stop offset="1" stopColor="#DAE0F5" />
         </linearGradient>
         <linearGradient
           id="paint22_linear"
@@ -1281,11 +1281,11 @@ export function AboutUsHeroSVG({
           y2="429.396"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#C4CAE9" />
-          <stop offset="0.0949175" stop-color="#CED3ED" />
-          <stop offset="0.4088" stop-color="#E9EBF7" />
-          <stop offset="0.6869" stop-color="#F9FAFD" />
-          <stop offset="0.8989" stop-color="white" />
+          <stop stopColor="#C4CAE9" />
+          <stop offset="0.0949175" stopColor="#CED3ED" />
+          <stop offset="0.4088" stopColor="#E9EBF7" />
+          <stop offset="0.6869" stopColor="#F9FAFD" />
+          <stop offset="0.8989" stopColor="white" />
         </linearGradient>
         <linearGradient
           id="paint23_linear"
@@ -1295,11 +1295,11 @@ export function AboutUsHeroSVG({
           y2="418.002"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#C4CAE9" />
-          <stop offset="0.0949175" stop-color="#CED3ED" />
-          <stop offset="0.4088" stop-color="#E9EBF7" />
-          <stop offset="0.6869" stop-color="#F9FAFD" />
-          <stop offset="0.8989" stop-color="white" />
+          <stop stopColor="#C4CAE9" />
+          <stop offset="0.0949175" stopColor="#CED3ED" />
+          <stop offset="0.4088" stopColor="#E9EBF7" />
+          <stop offset="0.6869" stopColor="#F9FAFD" />
+          <stop offset="0.8989" stopColor="white" />
         </linearGradient>
         <linearGradient
           id="paint24_linear"
@@ -1309,9 +1309,9 @@ export function AboutUsHeroSVG({
           y2="407.948"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#20196F" />
-          <stop offset="0.5117" stop-color="#302B8E" />
-          <stop offset="1" stop-color="#423EAF" />
+          <stop stopColor="#20196F" />
+          <stop offset="0.5117" stopColor="#302B8E" />
+          <stop offset="1" stopColor="#423EAF" />
         </linearGradient>
         <linearGradient
           id="paint25_linear"
@@ -1321,9 +1321,9 @@ export function AboutUsHeroSVG({
           y2="407.268"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#20196F" />
-          <stop offset="0.5117" stop-color="#302B8E" />
-          <stop offset="1" stop-color="#423EAF" />
+          <stop stopColor="#20196F" />
+          <stop offset="0.5117" stopColor="#302B8E" />
+          <stop offset="1" stopColor="#423EAF" />
         </linearGradient>
         <linearGradient
           id="paint26_linear"
@@ -1333,9 +1333,9 @@ export function AboutUsHeroSVG({
           y2="391.55"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#20196F" />
-          <stop offset="0.7875" stop-color="#161350" />
-          <stop offset="1" stop-color="#131147" />
+          <stop stopColor="#20196F" />
+          <stop offset="0.7875" stopColor="#161350" />
+          <stop offset="1" stopColor="#131147" />
         </linearGradient>
         <linearGradient
           id="paint27_linear"
@@ -1345,9 +1345,9 @@ export function AboutUsHeroSVG({
           y2="425.438"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#20196F" />
-          <stop offset="0.8459" stop-color="#322A8E" />
-          <stop offset="1" stop-color="#362E94" />
+          <stop stopColor="#20196F" />
+          <stop offset="0.8459" stopColor="#322A8E" />
+          <stop offset="1" stopColor="#362E94" />
         </linearGradient>
         <linearGradient
           id="paint28_linear"
@@ -1357,9 +1357,9 @@ export function AboutUsHeroSVG({
           y2="423.819"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#20196F" />
-          <stop offset="0.8459" stop-color="#322A8E" />
-          <stop offset="1" stop-color="#362E94" />
+          <stop stopColor="#20196F" />
+          <stop offset="0.8459" stopColor="#322A8E" />
+          <stop offset="1" stopColor="#362E94" />
         </linearGradient>
         <linearGradient
           id="paint29_linear"
@@ -1369,9 +1369,9 @@ export function AboutUsHeroSVG({
           y2="400.207"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#20196F" />
-          <stop offset="0.6094" stop-color="#342F95" />
-          <stop offset="1" stop-color="#423EAF" />
+          <stop stopColor="#20196F" />
+          <stop offset="0.6094" stopColor="#342F95" />
+          <stop offset="1" stopColor="#423EAF" />
         </linearGradient>
         <linearGradient
           id="paint30_linear"
@@ -1381,11 +1381,11 @@ export function AboutUsHeroSVG({
           y2="361.563"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.2165" stop-color="#DD3B10" />
-          <stop offset="0.4131" stop-color="#E8590E" />
-          <stop offset="0.6509" stop-color="#F4770B" />
-          <stop offset="0.8549" stop-color="#FB890A" />
-          <stop offset="1" stop-color="#FD9009" />
+          <stop offset="0.2165" stopColor="#DD3B10" />
+          <stop offset="0.4131" stopColor="#E8590E" />
+          <stop offset="0.6509" stopColor="#F4770B" />
+          <stop offset="0.8549" stopColor="#FB890A" />
+          <stop offset="1" stopColor="#FD9009" />
         </linearGradient>
         <linearGradient
           id="paint31_linear"
@@ -1395,11 +1395,11 @@ export function AboutUsHeroSVG({
           y2="364.696"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.2682" stop-color="#FD9009" />
-          <stop offset="0.4286" stop-color="#FC8A0A" />
-          <stop offset="0.6432" stop-color="#F8790E" />
-          <stop offset="0.8873" stop-color="#F25D13" />
-          <stop offset="1" stop-color="#EF4E16" />
+          <stop offset="0.2682" stopColor="#FD9009" />
+          <stop offset="0.4286" stopColor="#FC8A0A" />
+          <stop offset="0.6432" stopColor="#F8790E" />
+          <stop offset="0.8873" stopColor="#F25D13" />
+          <stop offset="1" stopColor="#EF4E16" />
         </linearGradient>
         <linearGradient
           id="paint32_linear"
@@ -1409,8 +1409,8 @@ export function AboutUsHeroSVG({
           y2="393.502"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.4086" stop-color="#BBC0E6" />
-          <stop offset="0.5654" stop-color="#C4CAE9" />
+          <stop offset="0.4086" stopColor="#BBC0E6" />
+          <stop offset="0.5654" stopColor="#C4CAE9" />
         </linearGradient>
         <linearGradient
           id="paint33_linear"
@@ -1420,9 +1420,9 @@ export function AboutUsHeroSVG({
           y2="417.038"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.4086" stop-color="#BBC0E6" />
-          <stop offset="0.4134" stop-color="#BCC1E7" />
-          <stop offset="0.5654" stop-color="#CED3F8" />
+          <stop offset="0.4086" stopColor="#BBC0E6" />
+          <stop offset="0.4134" stopColor="#BCC1E7" />
+          <stop offset="0.5654" stopColor="#CED3F8" />
         </linearGradient>
         <linearGradient
           id="paint34_linear"
@@ -1432,8 +1432,8 @@ export function AboutUsHeroSVG({
           y2="392.531"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.4086" stop-color="#BBC0E6" />
-          <stop offset="0.5654" stop-color="#C4CAE9" />
+          <stop offset="0.4086" stopColor="#BBC0E6" />
+          <stop offset="0.5654" stopColor="#C4CAE9" />
         </linearGradient>
         <linearGradient
           id="paint35_linear"
@@ -1443,8 +1443,8 @@ export function AboutUsHeroSVG({
           y2="395.99"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.4086" stop-color="#BBC0E6" />
-          <stop offset="0.5654" stop-color="#C4CAE9" />
+          <stop offset="0.4086" stopColor="#BBC0E6" />
+          <stop offset="0.5654" stopColor="#C4CAE9" />
         </linearGradient>
         <linearGradient
           id="paint36_linear"
@@ -1454,8 +1454,8 @@ export function AboutUsHeroSVG({
           y2="350.861"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#EF4E16" />
-          <stop offset="1" stop-color="#FC780B" />
+          <stop stopColor="#EF4E16" />
+          <stop offset="1" stopColor="#FC780B" />
         </linearGradient>
         <linearGradient
           id="paint37_linear"
@@ -1465,11 +1465,11 @@ export function AboutUsHeroSVG({
           y2="487.548"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.00561798" stop-color="white" />
-          <stop offset="0.246" stop-color="#FAFBFD" />
-          <stop offset="0.5298" stop-color="#ECEEF8" />
-          <stop offset="0.8346" stop-color="#D4D8EF" />
-          <stop offset="1" stop-color="#C4CAE9" />
+          <stop offset="0.00561798" stopColor="white" />
+          <stop offset="0.246" stopColor="#FAFBFD" />
+          <stop offset="0.5298" stopColor="#ECEEF8" />
+          <stop offset="0.8346" stopColor="#D4D8EF" />
+          <stop offset="1" stopColor="#C4CAE9" />
         </linearGradient>
         <linearGradient
           id="paint38_linear"
@@ -1479,11 +1479,11 @@ export function AboutUsHeroSVG({
           y2="496.992"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.00561798" stop-color="white" />
-          <stop offset="0.246" stop-color="#FAFBFD" />
-          <stop offset="0.5298" stop-color="#ECEEF8" />
-          <stop offset="0.8346" stop-color="#D4D8EF" />
-          <stop offset="1" stop-color="#C4CAE9" />
+          <stop offset="0.00561798" stopColor="white" />
+          <stop offset="0.246" stopColor="#FAFBFD" />
+          <stop offset="0.5298" stopColor="#ECEEF8" />
+          <stop offset="0.8346" stopColor="#D4D8EF" />
+          <stop offset="1" stopColor="#C4CAE9" />
         </linearGradient>
         <linearGradient
           id="paint39_linear"
@@ -1493,10 +1493,10 @@ export function AboutUsHeroSVG({
           y2="486.354"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#423EAF" />
-          <stop offset="0.3038" stop-color="#3A35A0" />
-          <stop offset="0.8906" stop-color="#241E77" />
-          <stop offset="1" stop-color="#20196F" />
+          <stop stopColor="#423EAF" />
+          <stop offset="0.3038" stopColor="#3A35A0" />
+          <stop offset="0.8906" stopColor="#241E77" />
+          <stop offset="1" stopColor="#20196F" />
         </linearGradient>
         <linearGradient
           id="paint40_linear"
@@ -1506,10 +1506,10 @@ export function AboutUsHeroSVG({
           y2="495.761"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#423EAF" />
-          <stop offset="0.3038" stop-color="#3A35A0" />
-          <stop offset="0.8906" stop-color="#241E77" />
-          <stop offset="1" stop-color="#20196F" />
+          <stop stopColor="#423EAF" />
+          <stop offset="0.3038" stopColor="#3A35A0" />
+          <stop offset="0.8906" stopColor="#241E77" />
+          <stop offset="1" stopColor="#20196F" />
         </linearGradient>
         <image
           id="image0"
