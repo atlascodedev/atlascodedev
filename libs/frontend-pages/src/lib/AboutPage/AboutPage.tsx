@@ -1,5 +1,5 @@
 import { AtlasStylesheet } from '@atlascode/frontend-helpers';
-import { Box, BoxProps, Button, Typography } from '@mui/material';
+import { Box, BoxProps, Button, ButtonProps, Typography } from '@mui/material';
 import {
   AboutUsHero,
   AssociatesSection,
@@ -9,7 +9,9 @@ import {
 } from '@atlascode/frontend-sections';
 
 /* eslint-disable-next-line */
-export interface AboutPageProps {}
+export interface AboutPageProps {
+  CallToActionButtonProps?: ButtonProps;
+}
 
 const employees = {
   employee3: {
@@ -46,7 +48,12 @@ export function AboutPage(props: AboutPageProps) {
           Ficou interessado? Vamos trabalhar juntos.
         </Typography>
 
-        <Button sx={styles.endCtaButton} variant="outlined" color="primary">
+        <Button
+          {...props.CallToActionButtonProps}
+          sx={styles.endCtaButton}
+          variant="outlined"
+          color="primary"
+        >
           Fale conosco
         </Button>
       </Box>

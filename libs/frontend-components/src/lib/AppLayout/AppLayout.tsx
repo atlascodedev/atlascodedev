@@ -56,10 +56,26 @@ export function AppLayout(props: AppLayoutProps) {
     }
   }, []);
 
+  const NAVIGATION_ITEMS_REF = React.useRef([
+    {
+      action: () => handleMenuClick(undefined, 'sobre-nos'),
+      label: 'Sobre nós',
+    },
+    {
+      action: () => handleMenuClick('#services'),
+      label: 'Serviços',
+    },
+    { action: () => handleMenuClick('#projects'), label: 'Projetos' },
+    {
+      action: () => handleMenuClick(undefined, 'contato'),
+      label: 'Contato',
+    },
+  ]);
+
   return (
     <React.Fragment>
       <AnimatePresence>
-        {loader && (
+        {loader && router.route === '/' && (
           <MotionBox
             onAnimationStart={() =>
               (window.document.body.style.overflow = 'hidden')
@@ -115,21 +131,7 @@ export function AppLayout(props: AppLayoutProps) {
               open: mobileMenuVisibility,
               onClick: () => toggleMobileMenuVisibility(!mobileMenuVisibility),
             }}
-            menuItems={[
-              {
-                action: () => handleMenuClick(),
-                label: 'Sobre nós',
-              },
-              {
-                action: () => handleMenuClick('#services'),
-                label: 'Serviços',
-              },
-              { action: () => handleMenuClick('#projects'), label: 'Projetos' },
-              {
-                action: () => handleMenuClick(undefined, 'contato'),
-                label: 'Contato',
-              },
-            ]}
+            menuItems={NAVIGATION_ITEMS_REF.current}
           />
         </div>
       </HideOnScroll>
@@ -149,21 +151,7 @@ export function AppLayout(props: AppLayoutProps) {
         open={mobileMenuVisibility}
         onClose={() => toggleMobileMenuVisibility(false)}
         onOpen={() => toggleMobileMenuVisibility(true)}
-        menuItems={[
-          {
-            action: () => handleMenuClick(undefined, 'sobre-nos'),
-            label: 'Sobre nós',
-          },
-          {
-            action: () => handleMenuClick('#services'),
-            label: 'Serviços',
-          },
-          { action: () => handleMenuClick('#projects'), label: 'Projetos' },
-          {
-            action: () => handleMenuClick(undefined, 'contato'),
-            label: 'Contato',
-          },
-        ]}
+        menuItems={NAVIGATION_ITEMS_REF.current}
       />
       <WhatsAppButton
         onClick={() =>
@@ -174,23 +162,7 @@ export function AppLayout(props: AppLayoutProps) {
         }
         color="secondary"
       />
-      <Footer
-        footerNavigation={[
-          {
-            action: () => handleMenuClick(),
-            label: 'Sobre nós',
-          },
-          {
-            action: () => handleMenuClick('#services'),
-            label: 'Serviços',
-          },
-          { action: () => handleMenuClick('#projects'), label: 'Projetos' },
-          {
-            action: () => handleMenuClick(undefined, 'contato'),
-            label: 'Contato',
-          },
-        ]}
-      />
+      <Footer footerNavigation={NAVIGATION_ITEMS_REF.current} />
     </React.Fragment>
   );
 }

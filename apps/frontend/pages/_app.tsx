@@ -5,6 +5,7 @@ import { CacheProvider, EmotionCache } from '@emotion/react';
 import createEmotionCache from '@emotion/cache';
 import { ThemeProvider } from '@atlascode/frontend-theme';
 import { AppLayout } from '@atlascode/frontend-components';
+import { MotionBox } from '@atlascode/frontend-utility';
 
 function CustomApp(props: AppProps & { emotionCache?: EmotionCache }) {
   const clientSideCache = createEmotionCache({ key: 'css' });
@@ -34,11 +35,31 @@ function CustomApp(props: AppProps & { emotionCache?: EmotionCache }) {
       </Head>
       <CacheProvider value={emotionCache}>
         <ThemeProvider>
-          <AppLayout>
-            <div className="app">
-              <Component {...pageProps} />
-            </div>
-          </AppLayout>
+          <MotionBox
+            animate="visible"
+            initial="hidden"
+            variants={{
+              visible: {
+                opacity: 1,
+                zIndex: 3000,
+              },
+              hidden: {
+                opacity: 0,
+                zIndex: -1,
+              },
+            }}
+            transition={{
+              duration: 1,
+            }}
+            sx={{ width: '100%', height: '100%' }}
+            key={router.route}
+          >
+            <AppLayout>
+              <div className="app">
+                <Component {...pageProps} />
+              </div>
+            </AppLayout>
+          </MotionBox>
         </ThemeProvider>
       </CacheProvider>
     </>
