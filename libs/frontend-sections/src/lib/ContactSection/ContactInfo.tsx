@@ -6,9 +6,19 @@ import { Box, BoxProps } from '@mui/system';
 import React from 'react';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface ContactInfoProps extends BoxProps {}
+export interface ContactInfoProps extends BoxProps {
+  facebookURL?: string;
+  instagramURL?: string;
+  whatsAppURL?: string;
+}
 
-const ContactInfo = ({ sx, ...rest }: ContactInfoProps) => {
+const ContactInfo = ({
+  sx,
+  facebookURL,
+  instagramURL,
+  whatsAppURL,
+  ...rest
+}: ContactInfoProps) => {
   return (
     <Box sx={{ ...sx, ...styles.root }} {...rest}>
       <Box sx={styles.container}>
@@ -35,6 +45,8 @@ const ContactInfo = ({ sx, ...rest }: ContactInfoProps) => {
 
       <Box sx={styles.socialContainer}>
         <CircleIconButton
+          LinkComponent="a"
+          href={instagramURL}
           inverted
           color="secondary"
           elevation={1}
@@ -43,6 +55,7 @@ const ContactInfo = ({ sx, ...rest }: ContactInfoProps) => {
         />
         <CircleIconButton
           inverted
+          href={facebookURL}
           color="secondary"
           elevation={1}
           icon={Facebook}
@@ -50,6 +63,7 @@ const ContactInfo = ({ sx, ...rest }: ContactInfoProps) => {
         />
         <CircleIconButton
           inverted
+          href={whatsAppURL}
           color="secondary"
           elevation={1}
           icon={WhatsApp}

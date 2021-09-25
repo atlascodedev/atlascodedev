@@ -26,31 +26,36 @@ const projects: ProjectItemProps[] = [
     tags: ['Desenvolvimento', 'Rebranding', 'UI', 'UX'],
     techList: ['figma', 'react', 'next', 'node'],
     title: 'Website de cartas contempladas com automação de funções.',
-    websiteURL: 'https://atlascode.dev',
+    websiteURL:
+      'https://firebasestorage.googleapis.com/v0/b/munay-nextjs-hefesto.appspot.com/o/adonis%2Fgallery%2Fprojeto-1.webp?alt=media',
   },
   {
     tags: ['Desenvolvimento', 'UI', 'UX'],
     title: 'Projeto de mapeamento Cultural de Taquara',
     techList: ['figma', 'react', 'next', 'node'],
-    websiteURL: 'https://atlascode.dev',
+    websiteURL:
+      'https://firebasestorage.googleapis.com/v0/b/munay-nextjs-hefesto.appspot.com/o/adonis%2Fgallery%2Fprojeto-2.webp?alt=media',
   },
   {
     tags: ['Desenvolvimento', 'UI', 'UX'],
     title: 'Website de cursos de pós-graduação e extensão em Medicina',
     techList: ['figma', 'react', 'next', 'node'],
-    websiteURL: 'https://atlascode.dev',
+    websiteURL:
+      'https://firebasestorage.googleapis.com/v0/b/munay-nextjs-hefesto.appspot.com/o/adonis%2Fgallery%2Fprojeto-3.webp?alt=media',
   },
   {
     tags: ['Desenvolvimento', 'UI', 'UX'],
     title: 'Landing Page para assessoria integral em projetos culturais',
     techList: ['figma', 'react', 'gatsby', 'node'],
-    websiteURL: 'https://atlascode.dev',
+    websiteURL:
+      'https://firebasestorage.googleapis.com/v0/b/munay-nextjs-hefesto.appspot.com/o/adonis%2Fgallery%2Fprojeto-4.webp?alt=media',
   },
   {
     tags: ['Desenvolvimento', 'Branding', 'UI', 'UX'],
     title: 'Landing Page de serralheria e prestação de serviço',
     techList: ['figma', 'react', 'gatsby', 'node'],
-    websiteURL: 'https://atlascode.dev',
+    websiteURL:
+      'https://firebasestorage.googleapis.com/v0/b/munay-nextjs-hefesto.appspot.com/o/adonis%2Fgallery%2Fprojeto-5.webp?alt=media',
   },
 ];
 

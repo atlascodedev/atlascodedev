@@ -1,53 +1,70 @@
 import React from 'react';
-import {
-  FormControl,
-  Input,
-  inputAdornmentClasses,
-  InputLabel,
-} from '@mui/material';
+import { FormControl, FormHelperText } from '@mui/material';
 import ContactFormInput, { ContactFormInputProps } from './ContactFormInput';
 import { Box } from '@mui/system';
 import { AtlasStylesheet } from '@atlascode/frontend-helpers';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface ContactFormInputFull extends ContactFormInputProps {
+export interface ContactFormInputFullProps extends ContactFormInputProps {
   label?: string;
+  helperText?: string;
 }
 
 const ContactFormInputFull = ({
   label = 'Placeholder label',
   sx,
+  helperText = ' ',
   ...rest
-}: ContactFormInputFull) => {
-  const labelId = React.useRef(
-    `label-id-${Date.now() + Math.floor(Math.random() + 1 * 1000)}`
-  );
+}: ContactFormInputFullProps) => {
+  const styleMemo = React.useMemo(() => styles(rest.error), [rest.error]);
 
   return (
-    <FormControl sx={{ ...sx, ...styles.formControl }} variant="standard">
-      <Box sx={styles.label} component="label" htmlFor={labelId.current}>
+    <FormControl sx={{ ...sx, ...styleMemo.formControl }} variant="standard">
+      <Box
+        sx={styleMemo.label}
+        component="label"
+        htmlFor={`$label-for-${label}`}
+      >
         {label}
       </Box>
-      <ContactFormInput {...rest} sx={styles.input} id={labelId.current} />
+      <ContactFormInput
+        {...rest}
+        sx={styleMemo.input}
+        id={`$label-for-${label}`}
+      />
+      <FormHelperText
+        sx={styleMemo.helperText}
+        error={rest.error}
+        id={`$label-for-${label}`}
+      >
+        {helperText}
+      </FormHelperText>
     </FormControl>
   );
 };
 
 export default ContactFormInputFull;
 
-const styles = AtlasStylesheet.create({
-  formControl: {
-    transition: 'all 0.3s ease',
-    color: (theme) => theme.palette.secondary.light,
-    fontSize: '10px',
-    ':focus-within': {
-      color: (theme) => theme.palette.primary.main,
+const styles = (error = false) =>
+  AtlasStylesheet.create({
+    formControl: {
+      transition: 'all 0.3s ease',
+      color: (theme) =>
+        (error && theme.palette.error.main) || theme.palette.secondary.light,
+      fontSize: '10px',
+      ':focus-within': {
+        color: (theme) =>
+          (error && theme.palette.error.dark) || theme.palette.primary.main,
+      },
+      gap: { xs: 1 },
     },
-    gap: { xs: 1 },
-  },
-  label: {
-    fontSize: '1.6em',
-    fontWeight: 700,
-  },
-  input: {},
-});
+    label: {
+      fontSize: '1.6em',
+      fontWeight: 700,
+    },
+    input: {},
+
+    helperText: {
+      fontSize: { xs: '1.2em', lg: '1.2em' },
+    },
+  });

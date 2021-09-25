@@ -1,12 +1,19 @@
 import { useMemoizedMergedObject } from '@atlascode/frontend-hooks';
-import { BoxProps, ButtonBase, Theme, Box, PaperProps } from '@mui/material';
+import {
+  BoxProps,
+  ButtonBase,
+  Theme,
+  Box,
+  PaperProps,
+  Button,
+} from '@mui/material';
 import { ResponsiveStyleValue, SxProps } from '@mui/system';
 import { SvgIconComponent } from '@mui/icons-material';
 import { Property } from 'csstype';
 import React from 'react';
 
 /* eslint-disable-next-line */
-export interface CircleIconButtonProps extends BoxProps<typeof ButtonBase> {
+export interface CircleIconButtonProps extends BoxProps<typeof Button> {
   fontSize?: ResponsiveStyleValue<Property.FontSize>;
   color?: 'primary' | 'secondary';
   icon?: SvgIconComponent;
