@@ -2,7 +2,9 @@
 import React from 'react';
 import { ContactPage as ContactPageComponent } from '@atlascode/frontend-pages';
 import { useFormik } from 'formik';
+import { FormService } from '@atlascode/frontend-services';
 import * as Yup from 'yup';
+import { CallToActionSharp } from '@mui/icons-material';
 
 interface ContactPageProps {}
 
@@ -14,6 +16,7 @@ const ContactPage = (props: ContactPageProps) => {
     isValid,
     handleChange,
     handleBlur,
+    submitForm,
     setFieldValue,
   } = useFormik({
     initialValues: {
@@ -22,7 +25,25 @@ const ContactPage = (props: ContactPageProps) => {
       phone: '',
       message: '',
     },
-    onSubmit: (values, action) => console.log(values, action),
+    onSubmit: (values, action) => {
+      action.setSubmitting(true);
+
+      FormService.postContact(
+        values.email,
+        values.name,
+        values.phone,
+        values.message
+      )
+        .then(() => {
+          console.log('success');
+          action.setSubmitting(false);
+          action.resetForm();
+        })
+        .catch((err) => {
+          console.error(err);
+          action.setSubmitting(false);
+        });
+    },
     validationSchema: Yup.object({
       name: Yup.string().required('Este campo é obrigatório'),
       email: Yup.string()
@@ -38,6 +59,7 @@ const ContactPage = (props: ContactPageProps) => {
       ButtonProps={{
         loading: isSubmitting,
         disabled: !isValid,
+        onClick: submitForm,
       }}
       NameInputProps={{
         value: values.name,

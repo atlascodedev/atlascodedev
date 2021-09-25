@@ -59,7 +59,7 @@ const defaultStyles = (
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: '50%',
-    padding: '2em',
+    padding: '2.35em',
     boxShadow: (theme) => theme.shadows[elevation],
     bgcolor: (theme) =>
       inverted ? theme.palette[color].main : theme.palette[color].contrastText,

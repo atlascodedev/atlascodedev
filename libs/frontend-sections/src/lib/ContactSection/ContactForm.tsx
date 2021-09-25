@@ -1,9 +1,7 @@
-import { BoxProps, Box, Button } from '@mui/material';
+import { BoxProps, Box } from '@mui/material';
 import { LoadingButton, LoadingButtonProps } from '@mui/lab';
-import { Save } from '@mui/icons-material';
 import React from 'react';
 import { AtlasStylesheet } from '@atlascode/frontend-helpers';
-import ContactFormInput, { ContactFormInputProps } from './ContactFormInput';
 import ContactFormInputFull, {
   ContactFormInputFullProps,
 } from './ContactFormInputFull';
@@ -64,6 +62,7 @@ export default ContactForm;
 const styles = AtlasStylesheet.create({
   root: {
     color: (theme) => theme.palette.primary.main,
+    fontSize: '10px',
   },
 
   container: {
@@ -71,7 +70,7 @@ const styles = AtlasStylesheet.create({
     gridTemplateColumns: { xs: '1fr', lg: '50% 50%' },
     gridAutoFlow: 'row',
     gridTemplateRows: { xs: '1fr' },
-    rowGap: { xs: 5 },
+    rowGap: { xs: '2em', lg: '1em' },
     columnGap: { xs: 1 },
   },
 

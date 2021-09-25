@@ -20,7 +20,7 @@ export default ContactPage;
 
 const styles = AtlasStylesheet.create({
   root: {
-    pt: { xs: 3, lg: 8 },
+    pt: { xs: 3, lg: 6 },
     pb: { xs: 15 },
   },
 });

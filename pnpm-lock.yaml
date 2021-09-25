@@ -35,6 +35,7 @@ specifiers:
   '@types/react-dom': 17.0.3
   '@typescript-eslint/eslint-plugin': ~4.28.3
   '@typescript-eslint/parser': ~4.28.3
+  axios: ^0.21.4
   babel-jest: 27.0.6
   babel-loader: 8.1.0
   core-js: ^3.6.5
@@ -76,6 +77,7 @@ dependencies:
   '@mui/material': 5.0.0-rc.1_2aabb0f0d3af50c9d76745c4f83f7bff
   '@mui/system': 5.0.0-rc.1_1b8a390c1218df869c93c0893911ddd6
   '@nrwl/next': 12.9.0_71e3740b3ea9d1203d68afe5200ffa67
+  axios: 0.21.4
   core-js: 3.17.3
   faker: 5.5.3
   formik: 2.2.9_react@17.0.2
@@ -6978,6 +6980,14 @@ packages:
   /axe-core/4.3.3:
     resolution: {integrity: sha512-/lqqLAmuIPi79WYfRpy2i8z+x+vxU3zX2uAm0gs1q52qTuKwolOj1P8XbufpXcsydrpKx2yGn2wzAnxCMV86QA==}
     engines: {node: '>=4'}
+
+  /axios/0.21.4:
+    resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
+    dependencies:
+      follow-redirects: 1.14.4
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /axobject-query/2.2.0:
     resolution: {integrity: sha512-Td525n+iPOOyUQIeBfcASuG6uJsDOITl7Mds5gFyerkWiX7qhUTdYUBlSgNMyVqtSJqwpt1kXGLdUt6SykLMRA==}

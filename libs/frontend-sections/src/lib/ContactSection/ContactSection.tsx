@@ -66,7 +66,6 @@ const styles = AtlasStylesheet.create({
     color: (theme) => theme.palette.secondary.main,
     fontWeight: 900,
     pb: { xs: '1em' },
-    mt: { xs: '1.5em' },
   },
 
   formContainer: {

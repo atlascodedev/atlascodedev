@@ -81,8 +81,8 @@ const styles = AtlasStylesheet.create({
     display: 'flex',
     flexDirection: 'column',
     fontSize: '10px',
-    justifyContent: { xs: 'space-around' },
-    gap: { xs: 3 },
+    justifyContent: { xs: 'flex-start' },
+    gap: { xs: '6em' },
     height: '100%',
   },
 
@@ -114,6 +114,6 @@ const styles = AtlasStylesheet.create({
   },
 
   icon: {
-    fontSize: { xs: '1.5em' },
+    fontSize: { xs: '1em' },
   },
 });
