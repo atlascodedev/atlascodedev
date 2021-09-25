@@ -7,16 +7,14 @@ const ACTIVE_SESSION_TOKEN_EXISTS =
   IS_BROWSER && window.sessionStorage.getItem(ACTIVE_SESSION_TOKEN);
 
 export function useIsActiveSession() {
-  const [isActiveSession, setIsActiveSession] = React.useState<boolean>(false);
+  const [isActiveSession, setIsActiveSession] = React.useState<boolean>(true);
 
   React.useEffect(() => {
-    if (IS_BROWSER) {
-      ACTIVE_SESSION_TOKEN_EXISTS
-        ? _.noop()
-        : (() => {
-            window.sessionStorage.setItem(ACTIVE_SESSION_TOKEN, 'true');
-            setIsActiveSession(true);
-          })();
+    if (IS_BROWSER && !ACTIVE_SESSION_TOKEN_EXISTS) {
+      window.sessionStorage.setItem(ACTIVE_SESSION_TOKEN, 'true');
+      setIsActiveSession(true);
+    } else {
+      return _.noop();
     }
   }, []);
 

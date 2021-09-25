@@ -40,17 +40,18 @@ export function AppLayout(props: AppLayoutProps) {
   const handleMenuClick = (id?: string, link?: string) => {
     if (router.route === '/' && id) {
       scrollToElem(id);
-    } else if (router.route === '/' && link) {
+    } else if (
+      (router.route === '/' && link) ||
+      (router.route !== link && link)
+    ) {
       router.push(link);
-    } else if (router.route !== link && link) {
-      router.push(link);
-    } else if (router.route !== '/' && id) {
-      router.push('/');
-      router.events.on('routeChangeComplete', () => {
+    } else if (
+      (router.route !== '/' && id) ||
+      (router.route !== '/' && id && !link)
+    ) {
+      router.push('/').then(() => {
         scrollToElem(id);
       });
-    } else if (router.route !== '/' && !id && !link) {
-      router.push('/');
     } else {
       _.noop();
     }
@@ -126,9 +127,13 @@ export function AppLayout(props: AppLayoutProps) {
         >
           <Header
             logoClick={() => {
-              router.route === '/'
-                ? scrollToElem('#back-to-top-anchor')
-                : router.push('/');
+              if (router.route !== '/') {
+                router.push('/').then(() => {
+                  scrollToElem('#back-to-top-anchor');
+                });
+              } else {
+                scrollToElem('#back-to-top-anchor');
+              }
             }}
             callToActionButton={{
               action: () => handleMenuClick(undefined, 'contato'),
