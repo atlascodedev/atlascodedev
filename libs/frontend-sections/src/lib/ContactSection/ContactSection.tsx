@@ -23,8 +23,6 @@ export function ContactSection({ sx, ...rest }: ContactSectionProps) {
     whatsAppURL: rest.whatsAppURL,
   } as ContactInfoProps;
 
-  console.log(contactFormProps);
-
   return (
     <Box sx={{ ...sx, ...styles }} {...rest}>
       <Container maxWidth="lg" sx={styles.root}>

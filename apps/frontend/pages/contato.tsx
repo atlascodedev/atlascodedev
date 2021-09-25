@@ -4,7 +4,6 @@ import { ContactPage as ContactPageComponent } from '@atlascode/frontend-pages';
 import { useFormik } from 'formik';
 import { FormService } from '@atlascode/frontend-services';
 import * as Yup from 'yup';
-import { CallToActionSharp } from '@mui/icons-material';
 
 interface ContactPageProps {}
 
@@ -56,6 +55,8 @@ const ContactPage = (props: ContactPageProps) => {
 
   return (
     <ContactPageComponent
+      facebookURL={'https://www.facebook.com/atlascodedev/'}
+      instagramURL={'https://www.instagram.com/atlascode'}
       ButtonProps={{
         loading: isSubmitting,
         disabled: !isValid,
