@@ -18,7 +18,19 @@ function CustomApp(props: AppProps & { emotionCache?: EmotionCache }) {
   return (
     <>
       <Head>
-        <title>Welcome to frontend!</title>
+        <title>{'AtlasCode - Desenvolvimento & Estratégia'}</title>
+        <meta
+          property="og:title"
+          content="AtlasCode - Desenvolvimento de web e estratégia de marketing digital ."
+        />
+        <meta
+          property="og:description"
+          content="O AtlasCode utilizas as melhores tecnologias do mercado a fim de proporcionar uma experiência diferenciada para seus clientes. A empresa conta com especialistas na área do desenvolvimento de web, e-commerce e aplicativos mobile e com consultores de marketing digital que lhe auxiliarão em seu projeto do começo ao fim, seja no planejamento e na estratégia de sua marca, quanto no desenvolvimento de seu produto."
+        />
+        <meta
+          name="description"
+          content="O AtlasCode utilizas as melhores tecnologias do mercado a fim de proporcionar uma experiência diferenciada para seus clientes. A empresa conta com especialistas na área do desenvolvimento de web, e-commerce e aplicativos mobile e com consultores de marketing digital que lhe auxiliarão em seu projeto do começo ao fim, seja no planejamento e na estratégia de sua marca, quanto no desenvolvimento de seu produto."
+        />
       </Head>
       <CacheProvider value={emotionCache}>
         <ThemeProvider>

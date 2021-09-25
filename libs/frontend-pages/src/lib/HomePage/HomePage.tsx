@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import { AtlasStylesheet } from '@atlascode/frontend-helpers';
+import { AtlasStylesheet, scrollToElem } from '@atlascode/frontend-helpers';
 import {
   HomeHero,
   DefenseSection,
@@ -74,12 +74,12 @@ const testimonials: TestimonialSliderItem[] = [
     testimonialCompany: 'Serralheria High Tech',
   },
   {
-    bgcolor: '#1C3664',
-    logo: './images/procidadania.png',
+    bgcolor: '#344E3E',
+    logo: './images/portalbens.png',
     testimonial:
-      'Só tenho a agradecer ao atendim3232323ento prestado pelo Atlas Code. Foram atenciosos do começo ao fim do projeto e me auxiliaram em diversas dúvida sobre negócios digitais. ',
-    testimonialName: 'Vanessa Sanchez',
-    testimonialCompany: 'Pro Cidadania Org',
+      'Sabemos que estamos seguros e muito bem amparados quando o assunto é assessoria para qualquer dúvida que possa surgir da nossa área. Agradeço aos profissionais do Atlas Code pelo empenho. E o nosso caminho agora é o topo do Google!',
+    testimonialName: 'Matheus Teixeira de Oliveira',
+    testimonialCompany: 'Sócio administrador - Portal Bens',
   },
 ];
 
@@ -125,7 +125,7 @@ export function HomePage(props: HomePageProps) {
   return (
     <div>
       <Box id="hero" sx={styles.heroSection}>
-        <HomeHero ctaAction={() => console.log('hello')} />
+        <HomeHero ctaAction={() => scrollToElem('#services')} />
       </Box>
 
       <Box id="defense-1" sx={styles.defenseSection}>
@@ -153,7 +153,7 @@ export function HomePage(props: HomePageProps) {
 
       <Box id="testimonials" sx={styles.testimonialsSection}>
         <Typography variant="h2" sx={styles.testimonialsSectionTitle}>
-          O que dizem do nosso trabalho{' '}
+          O que dizem do nosso trabalho
         </Typography>
         <TestimonialSlider testimonials={testimonials} />
       </Box>

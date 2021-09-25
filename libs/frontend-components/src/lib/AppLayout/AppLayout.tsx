@@ -2,7 +2,11 @@ import { WhatsAppButton } from '../WhatsAppButton/WhatsAppButton';
 import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
 import { AtlasLoader } from '../AtlasLoader/AtlasLoader';
-import { AtlasStylesheet, scrollToElem } from '@atlascode/frontend-helpers';
+import {
+  AtlasStylesheet,
+  scrollToElem,
+  redirectToWhatsapp,
+} from '@atlascode/frontend-helpers';
 import { Box } from '@mui/material';
 import { polkaPattern } from '@atlascode/frontend-jss-mixins';
 import {
@@ -95,6 +99,11 @@ export function AppLayout(props: AppLayoutProps) {
           }}
         >
           <Header
+            logoClick={() => {
+              router.route === '/'
+                ? scrollToElem('#back-to-top-anchor')
+                : router.push('/');
+            }}
             callToActionButton={{
               action: () => handleMenuClick(undefined, 'contato'),
               label: 'Faça seu orçamento',
@@ -156,8 +165,32 @@ export function AppLayout(props: AppLayoutProps) {
           },
         ]}
       />
-      <WhatsAppButton color="secondary" />
-      <Footer />
+      <WhatsAppButton
+        onClick={() =>
+          redirectToWhatsapp(
+            '5551984773704',
+            'Olá, estou vindo através do website e gostaria de mais informações.'
+          )
+        }
+        color="secondary"
+      />
+      <Footer
+        footerNavigation={[
+          {
+            action: () => handleMenuClick(),
+            label: 'Sobre nós',
+          },
+          {
+            action: () => handleMenuClick('#services'),
+            label: 'Serviços',
+          },
+          { action: () => handleMenuClick('#projects'), label: 'Projetos' },
+          {
+            action: () => handleMenuClick(undefined, 'contato'),
+            label: 'Contato',
+          },
+        ]}
+      />
     </React.Fragment>
   );
 }
