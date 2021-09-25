@@ -12,11 +12,6 @@ export interface FAQProps extends BoxProps {
 
 const QUESTIONS: FAQItem[] = [
   {
-    question: 'Quanto custa um website em média?',
-    answer:
-      'Vai depender muito das funcionalidades integradas ao seu projeto, mas uma landing page simples pode variar entre R$ 1.500 a R$ 3.000. Geralmente é cobrado por tempo de desenvolvimento.',
-  },
-  {
     question: 'Existe algum valor de manutenção?',
     answer:
       'Não. A ideia é dar autonomia aos nossos clientes, oferecendo a facilidade de utilizar nosso painel administrativo para gerenciar seções do próprio website, fazendo modificações com facilidade em tempo real.',

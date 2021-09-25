@@ -43,7 +43,7 @@ export default AccordionChevron;
 const defaultStyles = () => {
   return {
     '.AtlasCode-Accordion-Chevron-root': {
-      fontSize: '10px',
+      fontSize: '8px',
       width: { xs: '3.5em' },
       height: { xs: '3.5em' },
       display: 'flex',

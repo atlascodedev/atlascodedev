@@ -14,6 +14,7 @@ export const WhatsAppButton = ({
   color = 'primary',
   sx,
   style = {},
+  onClick,
   ...rest
 }: WhatsAppButtonProps) => {
   const [hovered, setHovered] = React.useState<boolean>(false);
@@ -23,6 +24,7 @@ export const WhatsAppButton = ({
   return (
     <AnimateSharedLayout>
       <MotionBox
+        onClick={onClick}
         sx={{ ...styles.root, ...sx }}
         style={style}
         layout

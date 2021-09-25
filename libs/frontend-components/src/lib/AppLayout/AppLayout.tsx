@@ -40,9 +40,14 @@ export function AppLayout(props: AppLayoutProps) {
   const handleMenuClick = (id?: string, link?: string) => {
     if (router.route === '/' && id) {
       scrollToElem(id);
-    } else if (!id && link) {
+    } else if (router.route === '/' && link) {
       router.push(link);
-    } else if (router.route !== '/') {
+    } else if (router.route !== '/' && id) {
+      router.push('/');
+      router.events.on('routeChangeComplete', () => {
+        scrollToElem(id);
+      });
+    } else if (router.route !== '/' && !id && !link) {
       router.push('/');
     } else {
       _.noop();
@@ -72,8 +77,6 @@ export function AppLayout(props: AppLayoutProps) {
       label: 'Contato',
     },
   ]);
-
-  const dispatchHello = alertStore((state) => state.dispatch);
 
   return (
     <React.Fragment>
@@ -165,7 +168,11 @@ export function AppLayout(props: AppLayoutProps) {
         }
         color="secondary"
       />
-      <Footer footerNavigation={NAVIGATION_ITEMS_REF.current} />
+      <Footer
+        instagramURL="https://www.instagram.com/atlascode/?hl=pt-br"
+        facebookURL="https://www.facebook.com/atlascodedev"
+        footerNavigation={NAVIGATION_ITEMS_REF.current}
+      />
     </React.Fragment>
   );
 }
