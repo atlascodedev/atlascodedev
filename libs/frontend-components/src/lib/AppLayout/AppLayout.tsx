@@ -19,7 +19,7 @@ import { AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
 import _ from 'lodash';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
-import { alertStore } from '@atlascode/frontend-utility';
+import { useIsActiveSession } from '@atlascode/frontend-hooks';
 
 /* eslint-disable-next-line */
 export interface AppLayoutProps {
@@ -41,6 +41,8 @@ export function AppLayout(props: AppLayoutProps) {
     if (router.route === '/' && id) {
       scrollToElem(id);
     } else if (router.route === '/' && link) {
+      router.push(link);
+    } else if (router.route !== link && link) {
       router.push(link);
     } else if (router.route !== '/' && id) {
       router.push('/');
@@ -78,10 +80,12 @@ export function AppLayout(props: AppLayoutProps) {
     },
   ]);
 
+  const isActiveSession = useIsActiveSession();
+
   return (
     <React.Fragment>
       <AnimatePresence>
-        {loader && router.route === '/' && (
+        {loader && router.route === '/' && !isActiveSession && (
           <MotionBox
             onAnimationStart={() =>
               (window.document.body.style.overflow = 'hidden')
