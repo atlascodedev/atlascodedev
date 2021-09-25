@@ -5,7 +5,7 @@ import { CacheProvider, EmotionCache } from '@emotion/react';
 import createEmotionCache from '@emotion/cache';
 import { ThemeProvider } from '@atlascode/frontend-theme';
 import { AppLayout } from '@atlascode/frontend-components';
-import { MotionBox } from '@atlascode/frontend-utility';
+import { MotionBox, GlobalSnack } from '@atlascode/frontend-utility';
 
 function CustomApp(props: AppProps & { emotionCache?: EmotionCache }) {
   const clientSideCache = createEmotionCache({ key: 'css' });
@@ -60,6 +60,8 @@ function CustomApp(props: AppProps & { emotionCache?: EmotionCache }) {
               </div>
             </AppLayout>
           </MotionBox>
+
+          <GlobalSnack />
         </ThemeProvider>
       </CacheProvider>
     </>

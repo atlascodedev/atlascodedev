@@ -66,6 +66,7 @@ specifiers:
   typescript: ~4.3.5
   url-loader: ^3.0.0
   yup: ^0.32.9
+  zustand: ^3.5.10
 
 dependencies:
   '@emotion/cache': 11.4.0
@@ -93,6 +94,7 @@ dependencies:
   swiper: 6.8.4
   tslib: 2.3.1
   yup: 0.32.9
+  zustand: 3.5.10_react@17.0.2
 
 devDependencies:
   '@babel/core': 7.12.13
@@ -17854,6 +17856,17 @@ packages:
       nanoclone: 0.2.1
       property-expr: 2.0.4
       toposort: 2.0.2
+    dev: false
+
+  /zustand/3.5.10_react@17.0.2:
+    resolution: {integrity: sha512-upluvSRWrlCiExu2UbkuMIPJ9AigyjRFoO7O9eUossIj7rPPq7pcJ0NKk6t2P7KF80tg/UdPX6/pNKOSbs9DEg==}
+    peerDependencies:
+      react: '>=16.8'
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      react: 17.0.2
     dev: false
 
   /zwitch/1.0.5:

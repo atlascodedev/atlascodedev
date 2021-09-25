@@ -19,6 +19,7 @@ import { AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
 import _ from 'lodash';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
+import { alertStore } from '@atlascode/frontend-utility';
 
 /* eslint-disable-next-line */
 export interface AppLayoutProps {
@@ -71,6 +72,8 @@ export function AppLayout(props: AppLayoutProps) {
       label: 'Contato',
     },
   ]);
+
+  const dispatchHello = alertStore((state) => state.dispatch);
 
   return (
     <React.Fragment>

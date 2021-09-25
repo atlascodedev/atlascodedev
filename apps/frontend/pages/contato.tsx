@@ -5,11 +5,14 @@ import { useFormik } from 'formik';
 import { FormService } from '@atlascode/frontend-services';
 import * as Yup from 'yup';
 import Head from 'next/head';
+import { alertStore } from '@atlascode/frontend-utility';
 import { deviceAwareWhatsappURL } from '@atlascode/frontend-helpers';
 
 interface ContactPageProps {}
 
 const ContactPage = (props: ContactPageProps) => {
+  const alertDispatch = alertStore((state) => state.dispatch);
+
   const {
     values,
     errors,
@@ -28,6 +31,7 @@ const ContactPage = (props: ContactPageProps) => {
     },
     onSubmit: (values, action) => {
       action.setSubmitting(true);
+      alertDispatch({ message: 'Enviando sua mensagem...', severity: 'info' });
 
       FormService.postContact(
         values.email,
@@ -36,11 +40,20 @@ const ContactPage = (props: ContactPageProps) => {
         values.message
       )
         .then(() => {
-          console.log('success');
+          alertDispatch({
+            message:
+              'Sua mensagem foi enviada com sucesso! Obrigado pelo contato, retornaremos em breve!',
+            severity: 'success',
+          });
           action.setSubmitting(false);
           action.resetForm();
         })
         .catch((err) => {
+          alertDispatch({
+            severity: 'error',
+            message:
+              'Houve um erro ao tentar enviar sua mensagem, recarregue a página e tente novamente. Se o erro persistir, por favor, tente o contato através do nosso WhatsApp. Pedimos desculpas pela inconveniência.',
+          });
           console.error(err);
           action.setSubmitting(false);
         });
