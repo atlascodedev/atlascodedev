@@ -7,11 +7,13 @@ import * as Yup from 'yup';
 import Head from 'next/head';
 import { alertStore } from '@atlascode/frontend-utility';
 import { deviceAwareWhatsappURL } from '@atlascode/frontend-helpers';
+import { useRouter } from 'next/router';
 
 interface ContactPageProps {}
 
 const ContactPage = (props: ContactPageProps) => {
   const alertDispatch = alertStore((state) => state.dispatch);
+  const router = useRouter();
 
   const {
     values,
@@ -47,6 +49,7 @@ const ContactPage = (props: ContactPageProps) => {
           });
           action.setSubmitting(false);
           action.resetForm();
+          router.push('contato-efetuado');
         })
         .catch((err) => {
           alertDispatch({
