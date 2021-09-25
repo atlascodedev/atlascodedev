@@ -74,7 +74,7 @@ const ContactPage = (props: ContactPageProps) => {
 
       <ContactPageComponent
         whatsAppURL={deviceAwareWhatsappURL(
-          '5551984773704',
+          '5551993836839',
           'Olá, vim através do website e gostaria de mais informações.'
         )}
         facebookURL={'https://www.facebook.com/atlascodedev/'}

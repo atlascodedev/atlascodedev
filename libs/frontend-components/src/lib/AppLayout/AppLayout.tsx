@@ -166,7 +166,7 @@ export function AppLayout(props: AppLayoutProps) {
       <WhatsAppButton
         onClick={() =>
           redirectToWhatsapp(
-            '5551984773704',
+            '5551993836839',
             'Olá, estou vindo através do website e gostaria de mais informações.'
           )
         }

@@ -69,7 +69,7 @@ const testimonials: TestimonialSliderItem[] = [
     bgcolor: '#181D26',
     logo: './images/hightech.png',
     testimonial:
-      'Só tenho a agradecer ao atendimento prestado pelo Atlas Code. Foram atenciosos do começo ao fim do projeto e me auxiliaram em diversas dúvida sobre negócios digitais. ',
+      'Só tenho a agradecer ao atendimento prestado pelo Atlas Code. Foram atenciosos do começo ao fim do projeto e me auxiliaram em diversas dúvidas sobre negócios digitais.',
     testimonialName: 'Enir Menezes',
     testimonialCompany: 'Serralheria High Tech',
   },
