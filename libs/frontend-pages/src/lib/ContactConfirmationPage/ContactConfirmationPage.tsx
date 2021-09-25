@@ -1,14 +1,27 @@
 import { LottieAnimation } from '@atlascode/frontend-utility';
-import { Box, BoxProps, Button, Container, Typography } from '@mui/material';
+import {
+  Box,
+  BoxProps,
+  Button,
+  Container,
+  Typography,
+  ButtonProps,
+} from '@mui/material';
 import { AtlasStylesheet } from '@atlascode/frontend-helpers';
 import data from './data.json';
 
 /* eslint-disable-next-line */
-export interface ContactConfirmationPageProps {}
+export interface ContactConfirmationPageProps extends BoxProps {
+  ReturnButtonProps?: ButtonProps;
+}
 
-export function ContactConfirmationPage(props: ContactConfirmationPageProps) {
+export function ContactConfirmationPage({
+  sx,
+  ReturnButtonProps,
+  ...rest
+}: ContactConfirmationPageProps) {
   return (
-    <Box sx={styles.root}>
+    <Box sx={{ ...styles.root, ...sx }} {...rest}>
       <Container sx={styles.container} maxWidth="lg">
         <LottieAnimation sx={styles.lottie} animationData={data} />
 
@@ -22,8 +35,13 @@ export function ContactConfirmationPage(props: ContactConfirmationPageProps) {
             pelo interesse!
           </Typography>
 
-          <Button sx={styles.button} color="primary" variant="outlined">
-            Voltar à página principal
+          <Button
+            {...ReturnButtonProps}
+            sx={styles.button}
+            color="primary"
+            variant="outlined"
+          >
+            Voltar à página principal.
           </Button>
         </Box>
       </Container>
