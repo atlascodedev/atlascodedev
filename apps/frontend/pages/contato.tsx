@@ -4,6 +4,7 @@ import { ContactPage as ContactPageComponent } from '@atlascode/frontend-pages';
 import { useFormik } from 'formik';
 import { FormService } from '@atlascode/frontend-services';
 import * as Yup from 'yup';
+import { deviceAwareWhatsappURL } from '@atlascode/frontend-helpers';
 
 interface ContactPageProps {}
 
@@ -55,6 +56,10 @@ const ContactPage = (props: ContactPageProps) => {
 
   return (
     <ContactPageComponent
+      whatsAppURL={deviceAwareWhatsappURL(
+        '5551984773704',
+        'Olá, vim através do website e gostaria de mais informações.'
+      )}
       facebookURL={'https://www.facebook.com/atlascodedev/'}
       instagramURL={'https://www.instagram.com/atlascode'}
       ButtonProps={{

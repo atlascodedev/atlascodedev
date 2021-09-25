@@ -44,31 +44,33 @@ const ContactInfo = ({
       </Typography>
 
       <Box sx={styles.socialContainer}>
-        <CircleIconButton
-          LinkComponent="a"
-          href={instagramURL}
-          inverted
-          color="secondary"
-          elevation={1}
-          icon={Instagram}
-          sx={styles.icon}
-        />
-        <CircleIconButton
-          inverted
-          href={facebookURL}
-          color="secondary"
-          elevation={1}
-          icon={Facebook}
-          sx={styles.icon}
-        />
-        <CircleIconButton
-          inverted
-          href={whatsAppURL}
-          color="secondary"
-          elevation={1}
-          icon={WhatsApp}
-          sx={styles.icon}
-        />
+        <a href={instagramURL} rel="noopener noreferrer" target="_blank">
+          <CircleIconButton
+            inverted
+            color="secondary"
+            elevation={1}
+            icon={Instagram}
+            sx={styles.icon}
+          />
+        </a>
+        <a href={facebookURL} rel="noopener noreferrer" target="_blank">
+          <CircleIconButton
+            inverted
+            color="secondary"
+            elevation={1}
+            icon={Facebook}
+            sx={styles.icon}
+          />
+        </a>
+        <a href={whatsAppURL} rel="noopener noreferrer" target="_blank">
+          <CircleIconButton
+            inverted
+            color="secondary"
+            elevation={1}
+            icon={WhatsApp}
+            sx={styles.icon}
+          />
+        </a>
       </Box>
     </Box>
   );

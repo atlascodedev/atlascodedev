@@ -22,3 +22,15 @@ export function redirectToWhatsapp(phoneNumber: string, message: string) {
     );
   }
 }
+
+export function deviceAwareWhatsappURL(phoneNumber: string, message: string) {
+  if (isMobile.any()) {
+    return `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
+      message
+    )}`;
+  } else {
+    return `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
+      message
+    )}&lang=pt_br`;
+  }
+}
