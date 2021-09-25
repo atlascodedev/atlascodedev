@@ -21,7 +21,7 @@ export function AdvertisementIcon({
       <path
         d="M3 10.2548L23.2588 2L44 10.2548L23.2588 19.9663L3 10.2548Z"
         stroke={fill}
-        stroke-width="2"
+        strokeWidth="2"
       />
       <path
         d="M11.0617 14.208L3 17.5356L7.82353 19.8693L23.2588 27.3372L44 17.5356L35.2471 14.208"

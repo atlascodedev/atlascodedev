@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const nativeSmoothScrollTo = (elem: HTMLElement) => {
+export const nativeSmoothScrollTo = (elem: Element | HTMLElement) => {
   window.scroll({
     behavior: 'smooth',
     left: 0,
@@ -37,16 +37,12 @@ export const smoothScrollTo = (to: number, duration: number) => {
   animateScroll();
 };
 
-let supportsNativeSmoothScroll;
+const supportsNativeSmoothScroll =
+  typeof window === 'undefined'
+    ? null
+    : 'scrollBehavior' in global.window.document.documentElement.style;
 
-if (typeof window === 'undefined') {
-  supportsNativeSmoothScroll = null;
-} else {
-  supportsNativeSmoothScroll =
-    'scrollBehavior' in global.window.document.documentElement.style;
-}
-
-const scrollToElem = (elemSelector) => {
+export const scrollToElem = (elemSelector: string): void => {
   if (!elemSelector) {
     return;
   }
@@ -56,7 +52,7 @@ const scrollToElem = (elemSelector) => {
     if (supportsNativeSmoothScroll as any) {
       nativeSmoothScrollTo(elem);
     } else {
-      smoothScrollTo(elem.offsetTop, 600);
+      smoothScrollTo((elem as HTMLElement).offsetTop, 600);
     }
   }
 };

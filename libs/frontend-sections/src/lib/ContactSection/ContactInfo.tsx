@@ -35,7 +35,7 @@ const ContactInfo = ({
           São Paulo
         </Typography>
         <Typography sx={styles.info} variant="h4">
-          {'(11) 9-6311-7788'}
+          {'(51) 9-8477-3704'}
         </Typography>
       </Box>
 

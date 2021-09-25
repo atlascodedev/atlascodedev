@@ -2,20 +2,29 @@ import { AtlasStylesheet } from '@atlascode/frontend-helpers';
 import { SwipeableDrawer, Paper, Box, Button } from '@mui/material';
 import React from 'react';
 import { AtlasLogo } from '@atlascode/frontend-svgs';
+import { MenuItem } from '../Header/Header';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface MobileMenuProps {
   open?: boolean;
+  menuItems?: MenuItem[];
+  onClose: (...args: unknown[]) => void;
+  onOpen: (...args: unknown[]) => void;
 }
 
 const ITEMS = ['Hello', 'World', 'Its me', 'Ok'];
 
-export const MobileMenu = ({ open = false }: MobileMenuProps) => {
+export const MobileMenu = ({
+  open = false,
+  menuItems = [],
+  onClose,
+  onOpen,
+}: MobileMenuProps) => {
   return (
     <SwipeableDrawer
       sx={styles.root}
-      onClose={() => console.log('hello')}
-      onOpen={() => console.log('open')}
+      onClose={onClose}
+      onOpen={onOpen}
       open={open}
       anchor="left"
     >
@@ -25,7 +34,7 @@ export const MobileMenu = ({ open = false }: MobileMenuProps) => {
         </Box>
 
         <Box sx={styles.list}>
-          {ITEMS.map((value, index) => {
+          {menuItems.map((value, index) => {
             return (
               <Button
                 sx={styles.listItem}
@@ -33,8 +42,12 @@ export const MobileMenu = ({ open = false }: MobileMenuProps) => {
                 variant="text"
                 color="secondary"
                 fullWidth
+                onClick={() => {
+                  value.action();
+                  onClose();
+                }}
               >
-                {value}
+                {value.label}
               </Button>
             );
           })}

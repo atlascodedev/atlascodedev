@@ -2,7 +2,7 @@ import { WhatsAppButton } from '../WhatsAppButton/WhatsAppButton';
 import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
 import { AtlasLoader } from '../AtlasLoader/AtlasLoader';
-import { AtlasStylesheet } from '@atlascode/frontend-helpers';
+import { AtlasStylesheet, scrollToElem } from '@atlascode/frontend-helpers';
 import { Box } from '@mui/material';
 import { polkaPattern } from '@atlascode/frontend-jss-mixins';
 import {
@@ -12,6 +12,10 @@ import {
 } from '@atlascode/frontend-utility';
 import React from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { useRouter } from 'next/router';
+import _ from 'lodash';
+import { MobileMenu } from '../MobileMenu/MobileMenu';
+
 /* eslint-disable-next-line */
 export interface AppLayoutProps {
   children?: React.ReactNode;
@@ -19,6 +23,26 @@ export interface AppLayoutProps {
 
 export function AppLayout(props: AppLayoutProps) {
   const [loader, setLoader] = React.useState<boolean>(true);
+  const [mobileMenuVisibility, setMobileMenuVisibility] =
+    React.useState<boolean>(false);
+
+  const toggleMobileMenuVisibility = (open: boolean) => {
+    setMobileMenuVisibility(open);
+  };
+
+  const router = useRouter();
+
+  const handleMenuClick = (id?: string, link?: string) => {
+    if (router.route === '/' && id) {
+      scrollToElem(id);
+    } else if (!id && link) {
+      router.push(link);
+    } else if (router.route !== '/') {
+      router.push('/');
+    } else {
+      _.noop();
+    }
+  };
 
   React.useEffect(() => {
     if (typeof window !== undefined) {
@@ -72,18 +96,30 @@ export function AppLayout(props: AppLayoutProps) {
         >
           <Header
             callToActionButton={{
-              action: () => console.log('hello world'),
+              action: () => handleMenuClick(undefined, 'contato'),
               label: 'Faça seu orçamento',
+            }}
+            AnimatedBurguerMenuProps={{
+              colorOpen: '#333',
+              colorClosed: '#333',
+              fontSize: '4px',
+              open: mobileMenuVisibility,
+              onClick: () => toggleMobileMenuVisibility(!mobileMenuVisibility),
             }}
             menuItems={[
               {
-                action: () => console.log('clicked'),
+                action: () => handleMenuClick(),
                 label: 'Sobre nós',
               },
-              { action: () => console.log('clicked'), label: 'Serviços' },
-              { action: () => console.log('clicked'), label: 'Projetos' },
-              { action: () => console.log('clicked'), label: 'Blog' },
-              { action: () => console.log('clicked'), label: 'Contato' },
+              {
+                action: () => handleMenuClick('#services'),
+                label: 'Serviços',
+              },
+              { action: () => handleMenuClick('#projects'), label: 'Projetos' },
+              {
+                action: () => handleMenuClick(undefined, 'contato'),
+                label: 'Contato',
+              },
             ]}
           />
         </div>
@@ -100,6 +136,26 @@ export function AppLayout(props: AppLayoutProps) {
       <ScrollBackTop />
       {props.children}
       <Box sx={styles.bgPattern} />
+      <MobileMenu
+        open={mobileMenuVisibility}
+        onClose={() => toggleMobileMenuVisibility(false)}
+        onOpen={() => toggleMobileMenuVisibility(true)}
+        menuItems={[
+          {
+            action: () => handleMenuClick(undefined, 'sobre-nos'),
+            label: 'Sobre nós',
+          },
+          {
+            action: () => handleMenuClick('#services'),
+            label: 'Serviços',
+          },
+          { action: () => handleMenuClick('#projects'), label: 'Projetos' },
+          {
+            action: () => handleMenuClick(undefined, 'contato'),
+            label: 'Contato',
+          },
+        ]}
+      />
       <WhatsAppButton color="secondary" />
       <Footer />
     </React.Fragment>

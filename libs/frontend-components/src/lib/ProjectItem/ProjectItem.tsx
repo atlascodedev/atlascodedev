@@ -9,6 +9,8 @@ export interface ProjectItemProps extends BoxProps {
   techList: TechType[];
   tags: string[];
   title: string;
+  imgURL: string;
+  imgAlt?: string;
   websiteURL: string;
 }
 
@@ -19,6 +21,8 @@ export function ProjectItem({
   tags = ['Desenvolvimento', 'Rebranding', 'UI', 'UX'],
   title = 'Website de cartas contempladas com automação de funções.',
   websiteURL = 'https://atlascode.dev',
+  imgURL = 'https://via.placeholder/1500',
+  imgAlt = 'this is an alt text, change me',
   ...rest
 }: ProjectItemProps) {
   const isDesktop = useMediaQuery('(min-width: 1024px)');
@@ -37,7 +41,8 @@ export function ProjectItem({
             <Box
               className="picture"
               component="img"
-              src="https://via.placeholder.com/1500"
+              alt={imgAlt}
+              src={imgURL}
             />
           </Box>
           <Box className="info-container">

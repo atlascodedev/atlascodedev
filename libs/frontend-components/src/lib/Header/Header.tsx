@@ -16,6 +16,7 @@ export type MenuItem = {
 export interface HeaderProps extends BoxProps<typeof Paper> {
   menuItems: MenuItem[];
   callToActionButton: MenuItem;
+  logoClick?: (...args: unknown[]) => void;
   AnimatedBurguerMenuProps?: KotaBurguerProps;
 }
 

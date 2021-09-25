@@ -26,36 +26,41 @@ const projects: ProjectItemProps[] = [
     tags: ['Desenvolvimento', 'Rebranding', 'UI', 'UX'],
     techList: ['figma', 'react', 'next', 'node'],
     title: 'Website de cartas contempladas com automação de funções.',
-    websiteURL:
+    imgURL:
       'https://firebasestorage.googleapis.com/v0/b/munay-nextjs-hefesto.appspot.com/o/adonis%2Fgallery%2Fprojeto-1.webp?alt=media',
+    websiteURL: 'https://portalbens.com',
   },
   {
     tags: ['Desenvolvimento', 'UI', 'UX'],
     title: 'Projeto de mapeamento Cultural de Taquara',
     techList: ['figma', 'react', 'next', 'node'],
-    websiteURL:
+    imgURL:
       'https://firebasestorage.googleapis.com/v0/b/munay-nextjs-hefesto.appspot.com/o/adonis%2Fgallery%2Fprojeto-2.webp?alt=media',
+    websiteURL: 'https://mapa.pro-cidadania.org',
   },
   {
     tags: ['Desenvolvimento', 'UI', 'UX'],
     title: 'Website de cursos de pós-graduação e extensão em Medicina',
     techList: ['figma', 'react', 'next', 'node'],
-    websiteURL:
+    imgURL:
       'https://firebasestorage.googleapis.com/v0/b/munay-nextjs-hefesto.appspot.com/o/adonis%2Fgallery%2Fprojeto-3.webp?alt=media',
+    websiteURL: 'https://institutoeg.com',
   },
   {
     tags: ['Desenvolvimento', 'UI', 'UX'],
     title: 'Landing Page para assessoria integral em projetos culturais',
     techList: ['figma', 'react', 'gatsby', 'node'],
-    websiteURL:
+    imgURL:
       'https://firebasestorage.googleapis.com/v0/b/munay-nextjs-hefesto.appspot.com/o/adonis%2Fgallery%2Fprojeto-4.webp?alt=media',
+    websiteURL: 'https://www.pro-cidadania.org',
   },
   {
     tags: ['Desenvolvimento', 'Branding', 'UI', 'UX'],
     title: 'Landing Page de serralheria e prestação de serviço',
     techList: ['figma', 'react', 'gatsby', 'node'],
-    websiteURL:
+    imgURL:
       'https://firebasestorage.googleapis.com/v0/b/munay-nextjs-hefesto.appspot.com/o/adonis%2Fgallery%2Fprojeto-5.webp?alt=media',
+    websiteURL: 'https://hightechsc.com.br',
   },
 ];
 
@@ -79,11 +84,11 @@ const testimonials: TestimonialSliderItem[] = [
 ];
 
 const QUESTIONS: FAQItem[] = [
-  {
-    question: 'Quanto custa um website em média?',
-    answer:
-      'Vai depender muito das funcionalidades integradas ao seu projeto, mas uma landing page simples pode variar entre R$ 1.500 a R$ 3.000. Geralmente é cobrado por tempo de desenvolvimento.',
-  },
+  // {
+  //   question: 'Quanto custa um website em média?',
+  //   answer:
+  //     'Vai depender muito das funcionalidades integradas ao seu projeto, mas uma landing page simples pode variar entre R$ 1.500 a R$ 3.000. Geralmente é cobrado por tempo de desenvolvimento.',
+  // },
   {
     question: 'Existe algum valor de manutenção?',
     answer:
@@ -107,7 +112,7 @@ const QUESTIONS: FAQItem[] = [
   {
     question: 'Como funciona o serviço em nuvem?',
     answer:
-      'É uma tecnologia que permite guardar dados na internet através de um servidor online que está sempre funcionado. Nele, o usuário pode armazenar arquivos, informações e documentos sem precisar de um HD físico.',
+      'Diferente do serviço tradicional onde você provisionaria este e pagaria por todo custo operacional do mesmo, o serviço em nuvem lhe dá a liberdade de pagar apenas pelo que usar e a agilidade de calibrar recursos de acordo com as suas necessidades.',
   },
   {
     question: 'Como faço pra colocar meu site no Google?',
@@ -119,19 +124,19 @@ const QUESTIONS: FAQItem[] = [
 export function HomePage(props: HomePageProps) {
   return (
     <div>
-      <Box sx={styles.heroSection}>
+      <Box id="hero" sx={styles.heroSection}>
         <HomeHero ctaAction={() => console.log('hello')} />
       </Box>
 
-      <Box sx={styles.defenseSection}>
+      <Box id="defense-1" sx={styles.defenseSection}>
         <DefenseSection />
       </Box>
 
-      <Box sx={styles.defenseSectionAux}>
+      <Box id="defense-2" sx={styles.defenseSectionAux}>
         <DefenseSectionAux />
       </Box>
 
-      <Box sx={styles.serviceRoot}>
+      <Box id="services" sx={styles.serviceRoot}>
         <Box sx={styles.serviceSection}>
           <OurServicesDesktop sx={styles.servicesDesktop} />
           <OurServicesMobile sx={styles.servicesMobile} />
@@ -142,18 +147,18 @@ export function HomePage(props: HomePageProps) {
         </Box>
       </Box>
 
-      <Box sx={styles.projectsSection}>
+      <Box id="projects" sx={styles.projectsSection}>
         <ProjectsSection sx={styles.projectsInner} projects={projects} />
       </Box>
 
-      <Box sx={styles.testimonialsSection}>
+      <Box id="testimonials" sx={styles.testimonialsSection}>
         <Typography variant="h2" sx={styles.testimonialsSectionTitle}>
           O que dizem do nosso trabalho{' '}
         </Typography>
         <TestimonialSlider testimonials={testimonials} />
       </Box>
 
-      <Box sx={styles.faqSection}>
+      <Box id="faq" sx={styles.faqSection}>
         <FAQSection questions={QUESTIONS} />
       </Box>
     </div>
