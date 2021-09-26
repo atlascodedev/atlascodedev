@@ -6,6 +6,9 @@ import createEmotionCache from '@emotion/cache';
 import { ThemeProvider } from '@atlascode/frontend-theme';
 import { AppLayout } from '@atlascode/frontend-components';
 import { MotionBox, GlobalSnack } from '@atlascode/frontend-utility';
+import TagManager from 'react-gtm-module';
+
+const GTM_ID = 'GTM-5N9X78C';
 
 function CustomApp(props: AppProps & { emotionCache?: EmotionCache }) {
   const clientSideCache = createEmotionCache({ key: 'css' });
@@ -15,6 +18,10 @@ function CustomApp(props: AppProps & { emotionCache?: EmotionCache }) {
     emotionCache = clientSideCache,
     router,
   } = props;
+
+  React.useEffect(() => {
+    TagManager.initialize({ gtmId: GTM_ID });
+  }, []);
 
   return (
     <>
