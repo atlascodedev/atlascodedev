@@ -1,16 +1,22 @@
 import { AtlasStylesheet } from '@atlascode/frontend-helpers';
 import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
-import { SvgIcon } from '@mui/material';
+import { SvgIcon, BoxProps } from '@mui/material';
 import { WhatsApp } from '@mui/icons-material';
 import React from 'react';
 import { MotionBox } from '@atlascode/frontend-utility';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface WhatsAppButtonProps {
+export interface WhatsAppButtonProps extends BoxProps {
   color?: 'primary' | 'secondary';
 }
 
-export const WhatsAppButton = ({ color = 'primary' }: WhatsAppButtonProps) => {
+export const WhatsAppButton = ({
+  color = 'primary',
+  sx,
+  style = {},
+  onClick,
+  ...rest
+}: WhatsAppButtonProps) => {
   const [hovered, setHovered] = React.useState<boolean>(false);
 
   const styles = React.useMemo(() => stylesClass(color), [color]);
@@ -18,7 +24,9 @@ export const WhatsAppButton = ({ color = 'primary' }: WhatsAppButtonProps) => {
   return (
     <AnimateSharedLayout>
       <MotionBox
-        sx={styles.root}
+        onClick={onClick}
+        sx={{ ...styles.root, ...sx }}
+        style={style}
         layout
         transition={{ type: 'keyframes' }}
         onMouseEnter={() => setHovered(true)}
@@ -55,13 +63,14 @@ const stylesClass = (color: 'primary' | 'secondary' = 'primary') =>
   AtlasStylesheet.create({
     root: {
       position: 'fixed',
-      bottom: '10%',
-      left: 0,
+      bottom: (theme) => theme.spacing(1),
+      left: (theme) => theme.spacing(0),
       width: 'auto',
       color: (theme) => theme.palette[color].contrastText,
       bgcolor: (theme) => theme.palette[color].main,
       borderRadius: '0px 10px 10px 0px',
       cursor: 'pointer',
+      fontSize: { xs: '10px', lg: '10px' },
     },
 
     container: {

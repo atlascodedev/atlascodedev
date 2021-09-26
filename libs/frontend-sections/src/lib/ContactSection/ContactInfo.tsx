@@ -6,9 +6,19 @@ import { Box, BoxProps } from '@mui/system';
 import React from 'react';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface ContactInfoProps extends BoxProps {}
+export interface ContactInfoProps extends BoxProps {
+  facebookURL?: string;
+  instagramURL?: string;
+  whatsAppURL?: string;
+}
 
-const ContactInfo = ({ sx, ...rest }: ContactInfoProps) => {
+const ContactInfo = ({
+  sx,
+  facebookURL,
+  instagramURL,
+  whatsAppURL,
+  ...rest
+}: ContactInfoProps) => {
   return (
     <Box sx={{ ...sx, ...styles.root }} {...rest}>
       <Box sx={styles.container}>
@@ -25,7 +35,7 @@ const ContactInfo = ({ sx, ...rest }: ContactInfoProps) => {
           São Paulo
         </Typography>
         <Typography sx={styles.info} variant="h4">
-          {'(11) 9-6311-7788'}
+          {'(51) 9-8477-3704'}
         </Typography>
       </Box>
 
@@ -34,27 +44,33 @@ const ContactInfo = ({ sx, ...rest }: ContactInfoProps) => {
       </Typography>
 
       <Box sx={styles.socialContainer}>
-        <CircleIconButton
-          inverted
-          color="secondary"
-          elevation={1}
-          icon={Instagram}
-          sx={styles.icon}
-        />
-        <CircleIconButton
-          inverted
-          color="secondary"
-          elevation={1}
-          icon={Facebook}
-          sx={styles.icon}
-        />
-        <CircleIconButton
-          inverted
-          color="secondary"
-          elevation={1}
-          icon={WhatsApp}
-          sx={styles.icon}
-        />
+        <a href={instagramURL} rel="noopener noreferrer" target="_blank">
+          <CircleIconButton
+            inverted
+            color="secondary"
+            elevation={1}
+            icon={Instagram}
+            sx={styles.icon}
+          />
+        </a>
+        <a href={facebookURL} rel="noopener noreferrer" target="_blank">
+          <CircleIconButton
+            inverted
+            color="secondary"
+            elevation={1}
+            icon={Facebook}
+            sx={styles.icon}
+          />
+        </a>
+        <a href={whatsAppURL} rel="noopener noreferrer" target="_blank">
+          <CircleIconButton
+            inverted
+            color="secondary"
+            elevation={1}
+            icon={WhatsApp}
+            sx={styles.icon}
+          />
+        </a>
       </Box>
     </Box>
   );
@@ -67,8 +83,8 @@ const styles = AtlasStylesheet.create({
     display: 'flex',
     flexDirection: 'column',
     fontSize: '10px',
-    justifyContent: { xs: 'space-around' },
-    gap: { xs: 3 },
+    justifyContent: { xs: 'flex-start' },
+    gap: { xs: '6em' },
     height: '100%',
   },
 
@@ -100,6 +116,6 @@ const styles = AtlasStylesheet.create({
   },
 
   icon: {
-    fontSize: { xs: '1.5em' },
+    fontSize: { xs: '1em' },
   },
 });

@@ -284,6 +284,7 @@
           "options": {
             "uiFramework": "@storybook/react",
             "port": 4400,
+            "staticDir": ["apps/frontend/public"],
             "config": {
               "configFolder": "libs/frontend-pages/.storybook"
             }

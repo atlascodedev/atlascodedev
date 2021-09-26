@@ -15,7 +15,7 @@ export function CloudPitchSection({ sx, ...rest }: CloudPitchSectionProps) {
       <Container sx={styles.grid} maxWidth="lg">
         <Box sx={styles.textContainer}>
           <Typography variant="h2" sx={styles.title}>
-            Métodos mais inteligentes. Melhores resultados.
+            Métodos inteligentes. Melhores resultados.
           </Typography>
 
           <Typography variant="h4" sx={styles.aux}>

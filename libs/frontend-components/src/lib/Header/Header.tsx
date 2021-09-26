@@ -6,6 +6,7 @@ import React from 'react';
 import AnimatedBurguerMenu, {
   KotaBurguerProps,
 } from '../AnimatedBurguerMenu/AnimatedBurguerMenu';
+import _ from 'lodash';
 
 export type MenuItem = {
   action: (...args: unknown[]) => void;
@@ -16,6 +17,7 @@ export type MenuItem = {
 export interface HeaderProps extends BoxProps<typeof Paper> {
   menuItems: MenuItem[];
   callToActionButton: MenuItem;
+  logoClick?: (...args: unknown[]) => void;
   AnimatedBurguerMenuProps?: KotaBurguerProps;
 }
 
@@ -30,6 +32,7 @@ export function Header({
   AnimatedBurguerMenuProps = {
     fontSize: '6px',
   },
+  logoClick = () => _.noop(),
   ...rest
 }: HeaderProps) {
   const defaultStylesMemoized = useMemoizedMergedObject(defaultStyles(), sx);
@@ -42,7 +45,7 @@ export function Header({
       sx={defaultStylesMemoized}
     >
       <Box className="grid-container">
-        <Box className="logo-container">
+        <Box onClick={logoClick} className="logo-container">
           <AtlasLogo className="logo" />
         </Box>
 
@@ -118,6 +121,7 @@ const defaultStyles = () => {
       justifyContent: 'flex-start',
       alignItems: 'center',
       pl: 2.5,
+      cursor: 'pointer',
 
       '@media (min-width: 1024px)': {
         justifyContent: 'center',

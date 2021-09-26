@@ -116,7 +116,7 @@ const defaultStyles = (bgcolor: Property.BackgroundColor = '#333') => {
     '.AtlasCode-TestimonialSlider-root': {
       fontSize: '10px',
       width: { xs: '27.9em', lg: '90.6em' },
-      height: { xs: '61.9em', lg: '40.6em' },
+      height: { xs: 'auto', lg: '40.6em' },
       border: (theme) => `0.5px solid ${theme.palette.grey[400]}`,
       borderRadius: '20px',
       position: 'relative',
@@ -143,7 +143,7 @@ const defaultStyles = (bgcolor: Property.BackgroundColor = '#333') => {
       '.grid': {
         display: 'grid',
         gridTemplateColumns: { xs: '1fr', lg: '30% 70%' },
-        gridTemplateRows: { xs: '45% 55%', lg: '1fr' },
+        gridTemplateRows: { xs: '0.75fr 1fr', lg: '1fr' },
         height: '100%',
         width: '100%',
       },
@@ -176,6 +176,7 @@ const defaultStyles = (bgcolor: Property.BackgroundColor = '#333') => {
         px: { xs: '3em', lg: '5em' },
         flexDirection: 'column',
         gap: { xs: 3, lg: 5 },
+        py: { xs: '3em', lg: '0px' },
       },
 
       '.testimonial': {

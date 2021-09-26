@@ -1,1 +1,1 @@
-export * from './lib/frontend-services';
+export * from './lib/FormService/Form.service';

@@ -56,7 +56,10 @@ export function TechnologiesSlider({ sx, ...rest }: TechnologiesSliderProps) {
         >
           {TECHNOLOGIES.map(({ icon, name }, index) => {
             return (
-              <SwiperSlide className="AtlasCode-TechnologiesSlider-swiper-slide">
+              <SwiperSlide
+                key={index}
+                className="AtlasCode-TechnologiesSlider-swiper-slide"
+              >
                 <TechnologyCard icon={icon} text={name} key={index} />
               </SwiperSlide>
             );

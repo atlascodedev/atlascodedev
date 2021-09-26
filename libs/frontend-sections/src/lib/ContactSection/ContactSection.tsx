@@ -1,24 +1,41 @@
 import { AtlasStylesheet } from '@atlascode/frontend-helpers';
 import { Box, BoxProps, Container, Typography } from '@mui/material';
-import ContactForm from './ContactForm';
-import ContactInfo from './ContactInfo';
+import ContactForm, { ContactFormProps } from './ContactForm';
+import ContactInfo, { ContactInfoProps } from './ContactInfo';
 /* eslint-disable-next-line */
-export interface ContactSectionProps extends BoxProps {}
+export interface ContactSectionProps
+  extends BoxProps,
+    ContactFormProps,
+    Pick<ContactInfoProps, 'whatsAppURL' | 'facebookURL' | 'instagramURL'> {}
 
 export function ContactSection({ sx, ...rest }: ContactSectionProps) {
+  const contactFormProps = {
+    NameInputProps: rest.NameInputProps,
+    EmailInputProps: rest.EmailInputProps,
+    MessageInputProps: rest.MessageInputProps,
+    PhoneInputProps: rest.PhoneInputProps,
+    ButtonProps: rest.ButtonProps,
+  } as ContactFormProps;
+
+  const contactInfoProps = {
+    facebookURL: rest.facebookURL,
+    instagramURL: rest.instagramURL,
+    whatsAppURL: rest.whatsAppURL,
+  } as ContactInfoProps;
+
   return (
     <Box sx={{ ...sx, ...styles }} {...rest}>
       <Container maxWidth="lg" sx={styles.root}>
         <Box sx={styles.grid}>
           <Box sx={styles.infoContainer}>
-            <ContactInfo />
+            <ContactInfo {...contactInfoProps} />
           </Box>
           <Box sx={styles.formContainer}>
             <Typography sx={styles.title} variant="h2">
               Entre em contato
             </Typography>
 
-            <ContactForm />
+            <ContactForm {...contactFormProps} />
           </Box>
         </Box>
       </Container>
@@ -47,7 +64,6 @@ const styles = AtlasStylesheet.create({
     color: (theme) => theme.palette.secondary.main,
     fontWeight: 900,
     pb: { xs: '1em' },
-    mt: { xs: '1.5em' },
   },
 
   formContainer: {

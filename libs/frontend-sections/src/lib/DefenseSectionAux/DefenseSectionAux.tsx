@@ -76,6 +76,7 @@ const defaultStyles = () => {
         fontWeight: 900,
         fontSize: { xs: '2.4em', lg: '3.2em' },
         maxWidth: { xs: '26ch' },
+        color: (theme) => theme.palette.secondary.light,
       },
 
       '.text-aux': {

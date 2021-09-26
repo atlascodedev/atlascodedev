@@ -72,7 +72,7 @@ export function OurServicesDesktop({ sx, ...rest }: OurServicesDesktopProps) {
     // eslint-disable-next-line react/jsx-no-useless-fragment
     <React.Fragment>
       {isDesktop && (
-        <Box sx={styles.root} {...rest}>
+        <Box sx={{ ...styles.root, ...sx }} {...rest}>
           <Container sx={styles.container} maxWidth="lg">
             <Typography variant="h1" sx={styles.title}>
               Nossos serviços

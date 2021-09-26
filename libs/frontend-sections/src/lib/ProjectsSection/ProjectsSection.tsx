@@ -70,6 +70,7 @@ const defaultStyles = () => {
         fontWeight: 900,
         mb: { xs: 6.5, lg: 13 },
         textAlign: 'center',
+        color: (theme) => theme.palette.secondary.light,
       },
 
       '.AtlasCode-ProjectsSection-project-list': {

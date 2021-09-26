@@ -1,91 +1,98 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
-
-type Anchor = 'top' | 'left' | 'bottom' | 'right';
+import { AtlasStylesheet } from '@atlascode/frontend-helpers';
+import { SwipeableDrawer, Paper, Box, Button } from '@mui/material';
+import React from 'react';
+import { AtlasLogo } from '@atlascode/frontend-svgs';
+import { MenuItem } from '../Header/Header';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface MobileMenuProps {}
-
-export function MobileMenu(props: MobileMenuProps) {
-  const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
-
-  const toggleDrawer =
-    (anchor: Anchor, open: boolean) =>
-    (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event &&
-        event.type === 'keydown' &&
-        ((event as React.KeyboardEvent).key === 'Tab' ||
-          (event as React.KeyboardEvent).key === 'Shift')
-      ) {
-        return;
-      }
-
-      setState({ ...state, [anchor]: open });
-    };
-
-  const list = (anchor: Anchor) => (
-    <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
-
-  return (
-    <div>
-      {(['left', 'right', 'top', 'bottom'] as const).map((anchor) => (
-        <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
-          <SwipeableDrawer
-            anchor={anchor}
-            open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
-            onOpen={toggleDrawer(anchor, true)}
-          >
-            {list(anchor)}
-          </SwipeableDrawer>
-        </React.Fragment>
-      ))}
-    </div>
-  );
+export interface MobileMenuProps {
+  open?: boolean;
+  menuItems?: MenuItem[];
+  onClose: (...args: unknown[]) => void;
+  onOpen: (...args: unknown[]) => void;
 }
 
+const ITEMS = ['Hello', 'World', 'Its me', 'Ok'];
+
+export const MobileMenu = ({
+  open = false,
+  menuItems = [],
+  onClose,
+  onOpen,
+}: MobileMenuProps) => {
+  return (
+    <SwipeableDrawer
+      sx={styles.root}
+      onClose={onClose}
+      onOpen={onOpen}
+      open={open}
+      anchor="left"
+    >
+      <Box sx={styles.container} component={Paper} elevation={0}>
+        <Box component={Paper} elevation={5} sx={styles.logoContainer}>
+          <AtlasLogo sx={styles.logo} />
+        </Box>
+
+        <Box sx={styles.list}>
+          {menuItems.map((value, index) => {
+            return (
+              <Button
+                sx={styles.listItem}
+                key={index}
+                variant="text"
+                color="secondary"
+                fullWidth
+                onClick={() => {
+                  value.action();
+                  onClose();
+                }}
+              >
+                {value.label}
+              </Button>
+            );
+          })}
+        </Box>
+      </Box>
+    </SwipeableDrawer>
+  );
+};
+
 export default MobileMenu;
+
+const styles = AtlasStylesheet.create({
+  logo: {
+    width: '100%',
+  },
+
+  listItem: {
+    py: { xs: 3 },
+    fontWeight: 900,
+    color: (theme) => theme.palette.secondary.light,
+    fontSize: { xs: '2.5em' },
+  },
+
+  listIcon: {
+    fontSize: { xs: '1em' },
+  },
+
+  logoContainer: {
+    width: '100%',
+    height: { xs: '10em' },
+    p: { xs: '2.5em' },
+  },
+
+  root: {
+    fontSize: '10px',
+  },
+
+  list: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    alignItems: 'flex-start',
+  },
+  container: {
+    height: '100%',
+    maxWidth: { xs: '30em' },
+  },
+});

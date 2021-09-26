@@ -1,16 +1,19 @@
-import { BoxProps, Box, Button, ButtonProps } from '@mui/material';
+import { BoxProps, Box } from '@mui/material';
+import { LoadingButton, LoadingButtonProps } from '@mui/lab';
 import React from 'react';
 import { AtlasStylesheet } from '@atlascode/frontend-helpers';
-import ContactFormInput, { ContactFormInputProps } from './ContactFormInput';
-import ContactFormInputFull from './ContactFormInputFull';
+import ContactFormInputFull, {
+  ContactFormInputFullProps,
+} from './ContactFormInputFull';
+import NumberFormat from 'react-number-format';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface ContactFormProps extends BoxProps {
-  NameInputProps?: ContactFormInputProps;
-  PhoneInputProps?: ContactFormInputProps;
-  EmailInputProps?: ContactFormInputProps;
-  MessageInputProps?: ContactFormInputProps;
-  ButtonProps?: ButtonProps;
+export interface ContactFormProps extends BoxProps {
+  NameInputProps?: ContactFormInputFullProps;
+  PhoneInputProps?: ContactFormInputFullProps;
+  EmailInputProps?: ContactFormInputFullProps;
+  MessageInputProps?: ContactFormInputFullProps;
+  ButtonProps?: LoadingButtonProps;
 }
 
 const ContactForm = ({
@@ -26,7 +29,13 @@ const ContactForm = ({
     <Box sx={{ ...sx, ...styles.root }} {...rest}>
       <Box sx={styles.container}>
         <ContactFormInputFull {...NameInputProps} sx={styles.nameField} />
-        <ContactFormInputFull {...PhoneInputProps} sx={styles.phoneField} />
+
+        <NumberFormat
+          customInput={ContactFormInputFull}
+          {...(PhoneInputProps as unknown)}
+          format="(##) #-####-####"
+          sx={styles.phoneField}
+        />
         <ContactFormInputFull {...EmailInputProps} sx={styles.emailField} />
         <ContactFormInputFull
           {...MessageInputProps}
@@ -34,7 +43,7 @@ const ContactForm = ({
           rows={6}
           multiline
         />
-        <Button
+        <LoadingButton
           {...ButtonProps}
           sx={styles.submitButton}
           size="small"
@@ -42,7 +51,7 @@ const ContactForm = ({
           color="primary"
         >
           Enviar
-        </Button>
+        </LoadingButton>
       </Box>
     </Box>
   );
@@ -53,6 +62,7 @@ export default ContactForm;
 const styles = AtlasStylesheet.create({
   root: {
     color: (theme) => theme.palette.primary.main,
+    fontSize: '10px',
   },
 
   container: {
@@ -60,7 +70,7 @@ const styles = AtlasStylesheet.create({
     gridTemplateColumns: { xs: '1fr', lg: '50% 50%' },
     gridAutoFlow: 'row',
     gridTemplateRows: { xs: '1fr' },
-    rowGap: { xs: 5 },
+    rowGap: { xs: '2em', lg: '1em' },
     columnGap: { xs: 1 },
   },
 
@@ -73,6 +83,7 @@ const styles = AtlasStylesheet.create({
     gridColumn: { lg: '1/3' },
   },
   submitButton: {
-    fontSize: { xs: '2em' },
+    fontSize: { xs: '1.5em' },
+    width: 'fit-content',
   },
 });

@@ -2,13 +2,26 @@ import { useMemoizedMergedObject } from '@atlascode/frontend-hooks';
 import { BoxProps, Theme, Box } from '@mui/material';
 import { SxProps } from '@mui/system';
 import { AtlasLogoMinimal } from '@atlascode/frontend-svgs';
-import { CircleIconButton } from '@atlascode/frontend-components';
+import { CircleIconButton } from '../CircleIconButton/CircleIconButton';
 import { Facebook, Instagram } from '@mui/icons-material';
 
 /* eslint-disable-next-line */
-export interface FooterProps extends BoxProps {}
+export interface FooterProps extends BoxProps {
+  facebookURL?: string;
+  instagramURL?: string;
+  footerNavigation?: Array<{
+    label: string;
+    action: (...args: unknown[]) => void;
+  }>;
+}
 
-export function Footer({ sx, ...rest }: FooterProps) {
+export function Footer({
+  sx,
+  facebookURL = 'https://facebook.com',
+  instagramURL = 'https://instagram.com',
+  footerNavigation = [],
+  ...rest
+}: FooterProps) {
   const defaultStylesMemo = useMemoizedMergedObject(defaultStyles(), sx);
 
   return (
@@ -16,10 +29,13 @@ export function Footer({ sx, ...rest }: FooterProps) {
       <Box className="grid">
         <Box className="footer-item-list">
           <FooterItem className="primary">Navegação</FooterItem>
-          <FooterItem>Home</FooterItem>
-          <FooterItem>Sobre nós</FooterItem>
-          <FooterItem>Blog</FooterItem>
-          <FooterItem>Contato</FooterItem>
+          {footerNavigation.map((value, index) => {
+            return (
+              <FooterItem onClick={value.action} key={index}>
+                {value.label}
+              </FooterItem>
+            );
+          })}
         </Box>
         <Box className="footer-item-list">
           <FooterItem className="primary">Especialistas em</FooterItem>
@@ -32,8 +48,13 @@ export function Footer({ sx, ...rest }: FooterProps) {
         <Box className="footer-item-list extra-gap">
           <FooterItem className="primary">Segue ae!</FooterItem>
           <Box className="footer-socials-icon-container">
-            <CircleIconButton icon={Facebook} color="secondary" />
-            <CircleIconButton icon={Instagram} color="secondary" />
+            <a href={facebookURL} rel="noopener noreferrer" target="_blank">
+              <CircleIconButton icon={Facebook} color="secondary" />
+            </a>
+
+            <a href={instagramURL} rel="noopener noreferrer" target="_blank">
+              <CircleIconButton icon={Instagram} color="secondary" />
+            </a>
           </Box>
 
           <Box className="footer-contact-email">atendimento@atlascode.dev</Box>
@@ -87,6 +108,7 @@ const defaultStyles = () => {
       alignItems: 'center',
       gap: 2,
       py: 6.5,
+      cursor: 'pointer',
 
       '@media (min-width: 1024px)': {
         alignItems: 'flex-start',

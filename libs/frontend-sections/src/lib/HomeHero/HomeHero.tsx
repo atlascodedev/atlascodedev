@@ -101,7 +101,7 @@ const defaultStyles = () => {
     },
 
     '.illustration-container': {
-      p: 5,
+      p: { xs: 3, lg: 1 },
     },
 
     '.illustration': {

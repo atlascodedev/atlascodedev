@@ -16,7 +16,7 @@ const ProjectItemTags = ({ sx, tags = [], ...rest }: ProjectItemTagsProps) => {
       <Box className="AtlasCode-ProjectItemTags-root">
         {tags.map((value, index) => {
           return (
-            <Box className="container">
+            <Box key={index} className="container">
               <Typography className="tag" variant="caption">
                 {value}
               </Typography>

@@ -1,3 +1,4 @@
+export * from './lib/AppLayout/AppLayout';
 export * from './lib/OurServiceItemAccordion/OurServiceItemAccordion';
 export * from './lib/OurServicesItem/OurServicesItem';
 export * from './lib/AtlasLoader/AtlasLoader';
