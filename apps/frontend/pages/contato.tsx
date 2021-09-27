@@ -8,12 +8,15 @@ import Head from 'next/head';
 import { alertStore } from '@atlascode/frontend-utility';
 import { deviceAwareWhatsappURL } from '@atlascode/frontend-helpers';
 import { useRouter } from 'next/router';
+import { useMediaQuery } from '@mui/material';
 
 interface ContactPageProps {}
 
 const ContactPage = (props: ContactPageProps) => {
   const alertDispatch = alertStore((state) => state.dispatch);
   const router = useRouter();
+
+  const isDesktop = useMediaQuery('@media(min-width: 1024px)');
 
   const {
     values,
@@ -76,10 +79,19 @@ const ContactPage = (props: ContactPageProps) => {
       <Head>Contato - AtlasCode - Desenvolvimento {'&'} estratégia.</Head>
 
       <ContactPageComponent
-        whatsAppURL={deviceAwareWhatsappURL(
-          '5551993836839',
-          'Olá, vim através do website e gostaria de mais informações.'
-        )}
+        whatsAppURL={
+          isDesktop
+            ? deviceAwareWhatsappURL(
+                '5551993836839',
+                'Olá, vim através do website e gostaria de mais informações.',
+                'desktop'
+              )
+            : deviceAwareWhatsappURL(
+                '5551993836839',
+                'Olá, vim através do website e gostaria de mais informações.',
+                'mobile'
+              )
+        }
         facebookURL={'https://www.facebook.com/atlascodedev/'}
         instagramURL={'https://www.instagram.com/atlascode'}
         ButtonProps={{

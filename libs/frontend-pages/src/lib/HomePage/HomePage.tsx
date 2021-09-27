@@ -56,7 +56,7 @@ const projects: ProjectItemProps[] = [
   },
   {
     tags: ['Desenvolvimento', 'Branding', 'UI', 'UX'],
-    title: 'Landing Page de serralheria e prestação de serviço',
+    title: 'Landing Page de serralheria e prestação de serviços',
     techList: ['figma', 'react', 'gatsby', 'node'],
     imgURL:
       'https://firebasestorage.googleapis.com/v0/b/munay-nextjs-hefesto.appspot.com/o/adonis%2Fgallery%2Fprojeto-5.webp?alt=media',

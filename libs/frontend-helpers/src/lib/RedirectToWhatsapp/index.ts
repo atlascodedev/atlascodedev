@@ -1,14 +1,16 @@
-import { isMobile } from '../isMobile/';
-
 /**
  *
  * @param phoneNumber - Phone number user will land into
  * @param message - Message will be URI encoded
  */
-export function redirectToWhatsapp(phoneNumber: string, message: string) {
-  if (isMobile.any()) {
+export function redirectToWhatsapp(
+  phoneNumber: string,
+  message: string,
+  device: 'mobile' | 'desktop'
+) {
+  if (device === 'mobile') {
     window.open(
-      `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
+      `whatsapp://send?phone=${phoneNumber}&text=${encodeURIComponent(
         message
       )}`,
       '_blank'
@@ -23,9 +25,13 @@ export function redirectToWhatsapp(phoneNumber: string, message: string) {
   }
 }
 
-export function deviceAwareWhatsappURL(phoneNumber: string, message: string) {
-  if (isMobile.any()) {
-    return `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
+export function deviceAwareWhatsappURL(
+  phoneNumber: string,
+  message: string,
+  device: 'mobile' | 'desktop'
+) {
+  if (device === 'mobile') {
+    return `whatsapp://send?phone=${phoneNumber}&text=${encodeURIComponent(
       message
     )}`;
   } else {
