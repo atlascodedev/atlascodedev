@@ -168,15 +168,31 @@ export function AppLayout(props: AppLayoutProps) {
         onOpen={() => toggleMobileMenuVisibility(true)}
         menuItems={NAVIGATION_ITEMS_REF.current}
       />
-      <WhatsAppButton
-        onClick={() =>
-          redirectToWhatsapp(
-            '5551993836839',
-            'Olá, estou vindo através do website e gostaria de mais informações.'
-          )
-        }
-        color="secondary"
-      />
+      <Box sx={{ display: { xs: 'block', lg: 'none' } }}>
+        <WhatsAppButton
+          onClick={() =>
+            redirectToWhatsapp(
+              '5551993836839',
+              'Olá, estou vindo através do website e gostaria de mais informações.',
+              'mobile'
+            )
+          }
+          color="secondary"
+        />
+      </Box>
+
+      <Box sx={{ display: { xs: 'none', lg: 'block' } }}>
+        <WhatsAppButton
+          onClick={() =>
+            redirectToWhatsapp(
+              '5551993836839',
+              'Olá, estou vindo através do website e gostaria de mais informações.',
+              'desktop'
+            )
+          }
+          color="secondary"
+        />
+      </Box>
       <Footer
         instagramURL="https://www.instagram.com/atlascode/?hl=pt-br"
         facebookURL="https://www.facebook.com/atlascodedev"
